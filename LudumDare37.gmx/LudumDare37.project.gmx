@@ -17,6 +17,7 @@
       <sprite>sprites\sprEditorP</sprite>
     </sprites>
     <sprite>sprites\sprArrowDown</sprite>
+    <sprite>sprites\sprPlayerFront</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
