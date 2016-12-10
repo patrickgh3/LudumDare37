@@ -124,8 +124,9 @@ if state == PlantState_Choose {
                 if abs(xo) == abs(yo) continue
                 var xx = tileX+xo
                 var yy = tileY+yo
-                if xx&lt;0 or xx&gt;=other.w or yy&lt;0 or yy&gt;=other.h continue
-                draw_sprite(sprTilePlaceHere, 0, objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize)
+                if scrTileIsValidChoose(xx, yy) {
+                    draw_sprite(sprTilePlaceHere, 0, objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize)
+                }
             }
         }
     }
@@ -144,7 +145,9 @@ else if state == PlantState_Draw {
                 if xx&lt;0 or xx&gt;=w or yy&lt;0 or yy&gt;=h continue
                 //scrDrawRectSize(objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize,
                 //global.tileSize, global.tileSize, true)
-                draw_sprite(sprTilePlaceHere, 0, objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize)
+                if scrTileIsValidPath(xx, yy) {
+                    draw_sprite(sprTilePlaceHere, 0, objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize)
+                }
             }
         }
     }
