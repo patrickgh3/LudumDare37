@@ -1,10 +1,9 @@
 with objPlanter {
-    if ds_list_size(pathList) == 0 return false
+    if ds_list_size(pathListX) == 0 return false
     var xCheck = argument0
     var yCheck = argument1
-    var lastCoords = pathList[| ds_list_size(pathList)-1]
-    var lastX = lastCoords div 1000
-    var lastY = lastCoords mod 1000
+    var lastX = pathListX[| ds_list_size(pathListX)-1]
+    var lastY = pathListY[| ds_list_size(pathListX)-1]
     var xoCheck = xCheck-lastX
     var yoCheck = yCheck-lastY
     

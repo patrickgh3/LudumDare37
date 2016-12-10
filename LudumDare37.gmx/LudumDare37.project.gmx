@@ -27,13 +27,9 @@
       <sprite>sprites\sprVineH</sprite>
       <sprite>sprites\sprVineV</sprite>
       <sprite>sprites\sprVineL2D</sprite>
-      <sprite>sprites\sprVineD2L</sprite>
       <sprite>sprites\sprVineR2D</sprite>
-      <sprite>sprites\sprVineD2R</sprite>
       <sprite>sprites\sprVineL2U</sprite>
-      <sprite>sprites\sprVineU2L</sprite>
       <sprite>sprites\sprVineR2U</sprite>
-      <sprite>sprites\sprVineU2R</sprite>
       <sprite>sprites\sprLeafUp</sprite>
       <sprite>sprites\sprLeafDown</sprite>
       <sprite>sprites\sprLeafLeft</sprite>
@@ -62,6 +58,7 @@
     <script>scripts\scrInitGlobals.gml</script>
     <script>scripts\scrDrawRectSize.gml</script>
     <script>scripts\scrPlanterTileIsNext.gml</script>
+    <script>scripts\scrClearListExceptForFirst.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objPlayer</object>
@@ -72,6 +69,8 @@
       <object>objects\objPlanter</object>
       <object>objects\objSeed</object>
       <object>objects\objVineBase</object>
+      <object>objects\objBulb</object>
+      <object>objects\objVineSegment</object>
     </objects>
   </objects>
   <rooms name="rooms">
