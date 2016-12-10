@@ -5,6 +5,7 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
+<<<<<<< HEAD
   <sprites name="sprites"/>
   <backgrounds name="background">
     <background>background\bgTilled</background>
@@ -19,6 +20,35 @@
   <paths name="paths"/>
   <rooms name="rooms">
     <room>rooms\room0</room>
+=======
+  <sprites name="sprites">
+    <sprites name="placeholder">
+      <sprite>sprites\sprPlaceholderPlayer</sprite>
+      <sprite>sprites\sprPlaceholderSeeds</sprite>
+    </sprites>
+    <sprites name="editor">
+      <sprite>sprites\sprEditorSquare32</sprite>
+      <sprite>sprites\sprEditorP</sprite>
+    </sprites>
+    <sprite>sprites\sprArrowDown</sprite>
+  </sprites>
+  <backgrounds name="background"/>
+  <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scrInitGlobals.gml</script>
+  </scripts>
+  <objects name="objects">
+    <object>objects\objPlayer</object>
+    <object>objects\objHouse</object>
+    <object>objects\objCamera</object>
+    <object>objects\objInit</object>
+    <object>objects\objSeed</object>
+    <object>objects\objPlanter</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\roomInit</room>
+    <room>rooms\roomTest</room>
+>>>>>>> 98e4fb94142225fe8c9a677a6f5c7801be11b905
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
