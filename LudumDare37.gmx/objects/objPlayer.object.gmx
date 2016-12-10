@@ -122,16 +122,60 @@ tileY = floor((y-objHouse.y) / global.tileSize)
 tileXWorld = objHouse.x + tileX*global.tileSize
 tileYWorld = objHouse.y + tileY*global.tileSize
 
-gridObject = objPlanter.grid[# tileX, tileY]
-
+gridObject = objPlanter.objectGrid[# tileX, tileY]
 placeable = gridObject == noone
 
 if placeable and keyboard_check_pressed(ord('Z')) {
-    var seed = instance_create(tileXWorld, tileYWorld, objSeed)
-    objPlanter.grid[# tileX, tileY] = seed
+    var s = instance_create(tileXWorld, tileYWorld, objSeed)
+    objPlanter.objectGrid[# tileX, tileY] = s
+    ds_list_add(objPlanter.pathList, tileX*1000+tileY)
+}
+
+if placeable and keyboard_check_pressed(ord('X')) and not instance_exists(objVineBase) {
+    var vb = instance_create(tileXWorld, tileYWorld, objVineBase)
+    objPlanter.objectGrid[# tileX, tileY] = vb
+    ds_list_add(objPlanter.pathList, tileX*1000+tileY)
 }
 
 uiAnimT += 1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if placeable {
+    var rectOff = 0
+    var arrowOff = 0
+    if floor(uiAnimT/20) mod 2 != 0 {
+        rectOff = 1
+        arrowOff = 1
+    }
+    
+    draw_set_color(c_white)
+    draw_rectangle(tileXWorld-rectOff, tileYWorld-rectOff,
+        tileXWorld+global.tileSize-1+rectOff, tileYWorld+global.tileSize-1+rectOff, true)
+    draw_sprite(sprArrowDown, 0, tileXWorld+global.tileSize/2, tileYWorld+4-arrowOff)
+}
+else {
+    draw_sprite_ext(sprPlaceholderX, 0, tileXWorld, tileYWorld, 1, 1, 0, c_white, 1)
+}
 </string>
           </argument>
         </arguments>
@@ -155,20 +199,6 @@ uiAnimT += 1
           <argument>
             <kind>1</kind>
             <string>draw_self()
-
-if placeable {
-    var rectOff = 0
-    var arrowOff = 0
-    if floor(uiAnimT/20) mod 2 != 0 {
-        rectOff = 1
-        arrowOff = 1
-    }
-    
-    draw_set_color(c_white)
-    draw_rectangle(tileXWorld-rectOff, tileYWorld-rectOff,
-        tileXWorld+global.tileSize-1+rectOff, tileYWorld+global.tileSize-1+rectOff, true)
-    draw_sprite(sprArrowDown, 0, tileXWorld+global.tileSize/2, tileYWorld+4-arrowOff)
-}
 </string>
           </argument>
         </arguments>

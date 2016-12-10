@@ -2,7 +2,7 @@
 <object>
   <spriteName>sprEditorP</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -27,9 +27,88 @@
             <kind>1</kind>
             <string>w = 15
 h = 15
-grid = ds_grid_create(w, h)
-ds_grid_clear(grid, noone)
-stack = ds_stack_create()
+objectGrid = ds_grid_create(w, h)
+ds_grid_clear(objectGrid, noone)
+pathList = ds_list_create()
+
+sprite_index = -1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>ds_grid_destroy(objectGrid)
+ds_list_destroy(pathList)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if ds_list_size(pathList) &gt; 0 {
+    var lastCoords = pathList[| ds_list_size(pathList)-1]
+    var lastX = lastCoords div 1000
+    var lastY = lastCoords mod 1000
+    
+    for (var xo=-1; xo&lt;=1; xo+=1) {
+        for (var yo=-1; yo&lt;=1; yo+=1) {
+            var xx = lastX+xo
+            var yy = lastY+yo
+            if abs(xo) == abs(yo) continue
+            if xx&lt;0 or xx&gt;=w or yy&lt;0 or yy&gt;=h continue
+            draw_set_color(c_blue)
+            scrDrawRectSize(objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize,
+            global.tileSize, global.tileSize, true)
+        }
+    }
+}
+
+if ds_list_size(pathSize) &gt; 1 {
+    for (var i=1; i&lt;ds_list_size(pathSize); i+=1) {
+        var coords1 = pathList[| i]
+        var x1 = coords1 div 1000
+        var y1 = coords1 mod 1000
+        var coords2 = pathList[| i-1]
+        var x2 = coords2 div 1000
+        var y2 = coords2 mod 1000
+        
+        draw_set_color(c_white)
+        draw_line(x1, y1, x2, y2)
+    }
+}
 </string>
           </argument>
         </arguments>

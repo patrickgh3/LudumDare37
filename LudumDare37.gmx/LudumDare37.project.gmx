@@ -9,6 +9,8 @@
     <sprites name="placeholder">
       <sprite>sprites\sprPlaceholderPlayer</sprite>
       <sprite>sprites\sprPlaceholderSeeds</sprite>
+      <sprite>sprites\sprPlaceholderVineBase</sprite>
+      <sprite>sprites\sprPlaceholderX</sprite>
     </sprites>
     <sprites name="editor">
       <sprite>sprites\sprEditorSquare32</sprite>
@@ -20,14 +22,18 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scrInitGlobals.gml</script>
+    <script>scripts\scrDrawRectSize.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objPlayer</object>
     <object>objects\objHouse</object>
     <object>objects\objCamera</object>
     <object>objects\objInit</object>
-    <object>objects\objSeed</object>
-    <object>objects\objPlanter</object>
+    <objects name="plants">
+      <object>objects\objPlanter</object>
+      <object>objects\objSeed</object>
+      <object>objects\objVineBase</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
