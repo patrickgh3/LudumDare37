@@ -14,4 +14,5 @@ with objPlanter {
 }
 
 with objPlayer numSeeds = numSeedsPerRound
+with objPlayer CanDisplay = 0
 objPlanter.state = PlantState_Choose

@@ -36,4 +36,9 @@ if (enterD==left and exitD==bottom) or (enterD==bottom and exitD==left) return s
 if (enterD==right and exitD==top) or (enterD==top and exitD==right) return sprVineR2U
 if (enterD==right and exitD==bottom) or (enterD==bottom and exitD==right) return sprVineR2D
 
+if (enterD==right and exitD==right) return sprVineLoopL
+if (enterD==left and exitD==left) return sprVineLoopR
+if (enterD==top and exitD==top) return sprVineLoopD
+if (enterD==bottom and exitD==bottom) return sprVineLoopU
+
 return sprVineCross

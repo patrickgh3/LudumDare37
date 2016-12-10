@@ -43,6 +43,7 @@ tileYWorld = 0
 uiAnimT = 0
 
 image_speed = 0
+CanDisplay = 0
 </string>
           </argument>
         </arguments>
@@ -204,6 +205,7 @@ if objPlanter.state == PlantState_Draw {
         ds_list_add(objPlanter.pathListY, tileY)
         
         numSeeds -= 1
+        CanDisplay = 1
         
         if numSeeds == 0 {
             scrGrowVine()
@@ -270,10 +272,14 @@ else if not ableToCancel {
 }
 
 // Draw num seeds
+
+/*
 draw_set_color(c_white)
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
 draw_text(x-10, y-38, 'x'+string(numSeeds))
+*/
+if CanDisplay = 1 draw_sprite(sprWateringCan,abs(numSeeds-4),x,y-53)
 </string>
           </argument>
         </arguments>
