@@ -48,6 +48,8 @@
     <sprite>sprites\sprSapling</sprite>
     <sprite>sprites\sprMound</sprite>
     <sprite>sprites\sprPond</sprite>
+    <sprite>sprites\sprPond2</sprite>
+    <sprite>sprites\sprPond3</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
