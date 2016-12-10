@@ -166,8 +166,6 @@ if placeable and keyboard_check_pressed(ord('Z')) {
             var vineBase = objectGrid[# startX, startY]
             
             for (var i=1; i&lt;ds_list_size(pathListY); i+=1) {
-                //var xP = pathListX[| i-2]
-                //var yP = pathListX[| i-2]
                 var x1 = pathListX[| i-1]
                 var y1 = pathListY[| i-1]
                 var x2 = pathListX[| i]
@@ -176,11 +174,20 @@ if placeable and keyboard_check_pressed(ord('Z')) {
                 var dy = -(y2-y1)
                 
                 with vineBase.bulbObj {
-                    var prevSeg = vineBase.segmentList[| ds_list_size(vineBase.segmentList)-1];
+                    var seg = instance_create(x, y, objVineSegment);
                     x += dx*global.tileSize
                     y += dy*global.tileSize
-                    var seg = instance_create(x, y, objVineSegment);
-                    ds_list_add(vineBase.segmentList, seg)
+                    if dx == 1 image_angle = 0
+                    if dx == -1 image_angle = 180
+                    if dy == 1 image_angle = 270
+                    if dy == -1 image_angle = 90
+                }
+                
+                with vineBase {
+                    ds_list_add(segmentList, seg)
+                    seg.sprite_index = scrVineSpriteTwoEdges(lastDx, lastDy, dx, dy)
+                    lastDx = dx
+                    lastDy = dy
                 }
             }
             

@@ -28,9 +28,12 @@
             <string>bulbObj = instance_create(x+global.tileSize/2, y+global.tileSize/2, objBulb)
 
 segmentList = ds_list_create()
-var seg = instance_create(bulbObj.x, bulbObj.y, objVineSegment);
-seg.sprite_index = sprVineStartR
-ds_list_add(segmentList, seg)
+
+//var seg = instance_create(bulbObj.x, bulbObj.y, objVineSegment);
+//seg.sprite_index = sprVineStartR
+//ds_list_add(segmentList, seg)
+lastDx = 0
+lastDy = 0
 </string>
           </argument>
         </arguments>
