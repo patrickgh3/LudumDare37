@@ -4,7 +4,11 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\sndWatering</sound>
+    <sound>sound\sndPlop</sound>
+    <sound>sound\sndDig</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="placeholder">
       <sprite>sprites\sprPlaceholderPlayer</sprite>
