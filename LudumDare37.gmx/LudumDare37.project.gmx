@@ -17,6 +17,8 @@
       <sprite>sprites\sprEditorP</sprite>
     </sprites>
     <sprite>sprites\sprArrowDown</sprite>
+    <sprite>sprites\sprNoSelectSquare</sprite>
+    <sprite>sprites\sprTilePlaceHere</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
@@ -32,6 +34,7 @@
   <scripts name="scripts">
     <script>scripts\scrInitGlobals.gml</script>
     <script>scripts\scrDrawRectSize.gml</script>
+    <script>scripts\scrPlanterTileIsNext.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objPlayer</object>
@@ -46,8 +49,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
-    <room>rooms\roomTest</room>
-    <room>rooms\room0</room>
+    <room>rooms\roomMain</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

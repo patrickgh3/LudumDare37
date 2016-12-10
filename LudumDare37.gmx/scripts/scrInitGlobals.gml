@@ -1,1 +1,1 @@
-global.tileSize = 24
+global.tileSize = 32

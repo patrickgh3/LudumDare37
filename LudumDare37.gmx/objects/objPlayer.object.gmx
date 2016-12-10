@@ -122,8 +122,7 @@ tileY = floor((y-objHouse.y) / global.tileSize)
 tileXWorld = objHouse.x + tileX*global.tileSize
 tileYWorld = objHouse.y + tileY*global.tileSize
 
-gridObject = objPlanter.objectGrid[# tileX, tileY]
-placeable = gridObject == noone
+placeable = scrPlanterTileIsNext(tileX, tileY)
 
 if placeable and keyboard_check_pressed(ord('Z')) {
     var s = instance_create(tileXWorld, tileYWorld, objSeed)
@@ -131,7 +130,7 @@ if placeable and keyboard_check_pressed(ord('Z')) {
     ds_list_add(objPlanter.pathList, tileX*1000+tileY)
 }
 
-if placeable and keyboard_check_pressed(ord('X')) and not instance_exists(objVineBase) {
+if keyboard_check_pressed(ord('X')) {
     var vb = instance_create(tileXWorld, tileYWorld, objVineBase)
     objPlanter.objectGrid[# tileX, tileY] = vb
     ds_list_add(objPlanter.pathList, tileX*1000+tileY)
@@ -174,7 +173,7 @@ uiAnimT += 1
     draw_sprite(sprArrowDown, 0, tileXWorld+global.tileSize/2, tileYWorld+4-arrowOff)
 }
 else {
-    draw_sprite_ext(sprPlaceholderX, 0, tileXWorld, tileYWorld, 1, 1, 0, c_white, 1)
+    draw_sprite_ext(sprNoSelectSquare, 0, tileXWorld, tileYWorld, 1, 1, 0, c_white, 1)
 }
 </string>
           </argument>
