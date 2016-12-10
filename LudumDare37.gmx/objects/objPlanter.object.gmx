@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>
-w = 11
-h = 11
+w = 9
+h = 9
 
 // grid of objects at each location (objSeed, objVineBase, etc)
 objectGrid = ds_grid_create(w, h)

@@ -80,6 +80,7 @@
   <rooms name="rooms">
     <room>rooms\roomInit</room>
     <room>rooms\roomMain</room>
+    <room>rooms\roomOriginalSize</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
