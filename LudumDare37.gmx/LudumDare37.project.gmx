@@ -55,10 +55,13 @@
     <sprite>sprites\sprPond3</sprite>
     <sprite>sprites\sprWell</sprite>
     <sprite>sprites\sprWateringCan</sprite>
+    <sprite>sprites\sprWater</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
+    <background>background\bgUntilled</background>
     <background>background\bgDirt</background>
+    <background>background\bgUntilledDirt</background>
     <background>background\bgGrass</background>
     <background>background\bgGrassDefaultTile</background>
     <background>background\bgTiles</background>
