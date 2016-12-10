@@ -41,6 +41,8 @@ pathAnimT = 0
 pathAnimYOff = 0
 
 sprite_index = -1
+
+state = PlantState_Choose
 </string>
           </argument>
         </arguments>
@@ -112,20 +114,38 @@ ds_list_destroy(pathListY)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Draw the positions the player can next plant at
-if ds_list_size(pathListX) &gt; 0 {
-    var lastX = pathListX[| ds_list_size(pathListX)-1]
-    var lastY = pathListY[| ds_list_size(pathListY)-1]
-    
-    for (var xo=-1; xo&lt;=1; xo+=1) {
-        for (var yo=-1; yo&lt;=1; yo+=1) {
-            var xx = lastX+xo
-            var yy = lastY+yo
-            if abs(xo) == abs(yo) continue
-            if xx&lt;0 or xx&gt;=w or yy&lt;0 or yy&gt;=h continue
-            //scrDrawRectSize(objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize,
-            //global.tileSize, global.tileSize, true)
-            draw_sprite(sprTilePlaceHere, 0, objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize)
+            <string>// debug
+draw_text(view_xview+20, view_yview+20, state)
+
+if state == PlantState_Choose {
+    with objVineBase {
+        for (var xo=-1; xo&lt;=1; xo+=1) {
+            for (var yo=-1; yo&lt;=1; yo+=1) {
+                if abs(xo) == abs(yo) continue
+                var xx = tileX+xo
+                var yy = tileY+yo
+                if xx&lt;0 or xx&gt;=other.w or yy&lt;0 or yy&gt;=other.h continue
+                draw_sprite(sprTilePlaceHere, 0, objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize)
+            }
+        }
+    }
+}
+else if state == PlantState_Draw {
+    // Draw the positions the player can next plant at
+    if ds_list_size(pathListX) &gt; 0 {
+        var lastX = pathListX[| ds_list_size(pathListX)-1]
+        var lastY = pathListY[| ds_list_size(pathListY)-1]
+        
+        for (var xo=-1; xo&lt;=1; xo+=1) {
+            for (var yo=-1; yo&lt;=1; yo+=1) {
+                if abs(xo) == abs(yo) continue
+                var xx = lastX+xo
+                var yy = lastY+yo
+                if xx&lt;0 or xx&gt;=w or yy&lt;0 or yy&gt;=h continue
+                //scrDrawRectSize(objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize,
+                //global.tileSize, global.tileSize, true)
+                draw_sprite(sprTilePlaceHere, 0, objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize)
+            }
         }
     }
 }
