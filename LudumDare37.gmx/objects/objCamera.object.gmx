@@ -35,8 +35,8 @@ var dist = centerDist*1.25
 x = xCenter + lengthdir_x(dist, centerAngle)
 y = yCenter + lengthdir_y(dist, centerAngle)
 
-view_xview = x - view_wview/2
-view_yview = y - view_hview/2
+view_xview = round(x - view_wview/2)
+view_yview = round(y - view_hview/2)
 </string>
           </argument>
         </arguments>

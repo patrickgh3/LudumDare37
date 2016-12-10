@@ -25,11 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>w = 15
-h = 15
+            <string>w = 11
+h = 11
 objectGrid = ds_grid_create(w, h)
 ds_grid_clear(objectGrid, noone)
 pathList = ds_list_create()
+pathAnimT = 0
+pathAnimYOff = 0
 
 sprite_index = -1
 </string>
@@ -56,6 +58,30 @@ sprite_index = -1
             <kind>1</kind>
             <string>ds_grid_destroy(objectGrid)
 ds_list_destroy(pathList)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>pathAnimT += 1
+pathAnimYOff = round(2*sin(pathAnimT/80*pi*2))
 </string>
           </argument>
         </arguments>
@@ -89,9 +115,9 @@ ds_list_destroy(pathList)
             var yy = lastY+yo
             if abs(xo) == abs(yo) continue
             if xx&lt;0 or xx&gt;=w or yy&lt;0 or yy&gt;=h continue
-            draw_set_color(c_blue)
-            scrDrawRectSize(objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize,
-            global.tileSize, global.tileSize, true)
+            //scrDrawRectSize(objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize,
+            //global.tileSize, global.tileSize, true)
+            draw_sprite(sprTilePlaceHere, 0, objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize)
         }
     }
 }
@@ -109,9 +135,13 @@ if ds_list_size(pathList) &gt; 1 {
         var xs = global.tileSize
         var ys = global.tileSize
         var xo = objHouse.x + global.tileSize/2
-        var yo = objHouse.y + global.tileSize/2
+        var yo = objHouse.y + global.tileSize/2+pathAnimYOff
         
-        draw_line(xo+xs*x1, yo+ys*y1, xo+xs*x2, yo+ys*y2)
+        draw_set_alpha(0.4)
+        draw_set_color(make_color_rgb(157,196,84))
+        draw_line_width(xo+xs*x1, yo+ys*y1, xo+xs*x2, yo+ys*y2, 6)
+        draw_set_alpha(1)
+        draw_set_color(c_white)
     }
 }
 </string>
