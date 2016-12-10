@@ -38,7 +38,14 @@
       <sprite>sprites\sprLeafDown</sprite>
       <sprite>sprites\sprLeafLeft</sprite>
       <sprite>sprites\sprLeafRight</sprite>
+      <sprite>sprites\sprVineStartL</sprite>
+      <sprite>sprites\sprVineStartR</sprite>
+      <sprite>sprites\sprVineStartU</sprite>
+      <sprite>sprites\sprVineStartD</sprite>
+      <sprite>sprites\sprBulb</sprite>
     </sprites>
+    <sprite>sprites\sprSapling</sprite>
+    <sprite>sprites\sprMound</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
