@@ -24,6 +24,7 @@
     <sprite>sprites\sprPlayerRight</sprite>
     <sprite>sprites\sprPlayerLeft</sprite>
     <sprites name="vine">
+      <sprite>sprites\sprVineCross</sprite>
       <sprite>sprites\sprVineH</sprite>
       <sprite>sprites\sprVineV</sprite>
       <sprite>sprites\sprVineL2D</sprite>
@@ -62,6 +63,8 @@
     <script>scripts\scrDrawRectSize.gml</script>
     <script>scripts\scrPlanterTileIsNext.gml</script>
     <script>scripts\scrClearListExceptForFirst.gml</script>
+    <script>scripts\scrVineSpriteOneEdge.gml</script>
+    <script>scripts\scrVineSpriteTwoEdges.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objPlayer</object>
