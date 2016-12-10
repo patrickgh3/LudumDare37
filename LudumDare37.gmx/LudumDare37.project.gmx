@@ -60,6 +60,7 @@
     <background>background\bgTilled</background>
     <background>background\bgDirt</background>
     <background>background\bgGrass</background>
+    <background>background\bgGrassDefaultTile</background>
     <background>background\bgTiles</background>
     <background>background\bgGlassHorizontal</background>
     <background>background\bgGlassHorizontalBottom</background>
@@ -95,6 +96,7 @@
       <object>objects\objBulb</object>
       <object>objects\objVineSegment</object>
     </objects>
+    <object>objects\objPond</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
