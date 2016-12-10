@@ -25,19 +25,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>bulbObj = instance_create(x, y, objBulb)
-bulbObj.visible=0
+            <string>tileX = floor((x-objHouse.x) / global.tileSize)
+tileY = floor((y-objHouse.y) / global.tileSize)
+
+var dx = 0
+var dy = 0
+if tileX==0 dx = -1
+else if tileX==objPlanter.w-1 dx = 1
+else if tileY==0 dy = -1
+else if tileY==objPlayer.h+1 dy = 1
+
+bulbObj = instance_create(x+global.tileSize*dx, y+global.tileSize*dy, objBulb)
+//bulbObj.visible=0
 
 segmentList = ds_list_create()
 
-//var seg = instance_create(bulbObj.x, bulbObj.y, objVineSegment);
-//seg.sprite_index = sprVineStartR
-//ds_list_add(segmentList, seg)
-lastDx = 0
-lastDy = 0
+var seg = instance_create(x, y, objVineSegment);
+ds_list_add(segmentList, seg)
+if dx == -1 { seg.sprite_index=sprVineStartL bulbObj.image_angle=180 }
+else if dx == 1 { seg.sprite_index=sprVineStartR bulbObj.image_angle=0 }
+else if dy == -1 { seg.sprite_index=sprVineStartU bulbObj.image_angle=90 }
+else if dy == 1 { seg.sprite_index=sprVineStartD bulbObj.image_angle=270 }
 
-tileX = floor((x-objHouse.x) / global.tileSize)
-tileY = floor((y-objHouse.y) / global.tileSize)
+lastDx = dx
+lastDy = dy
 </string>
           </argument>
         </arguments>
