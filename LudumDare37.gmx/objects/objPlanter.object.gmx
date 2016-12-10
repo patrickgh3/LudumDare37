@@ -42,7 +42,7 @@ pathAnimYOff = 0
 
 sprite_index = -1
 
-state = PlantState_Choose
+state = PlantState_Plant
 </string>
           </argument>
         </arguments>
@@ -114,7 +114,18 @@ ds_list_destroy(pathListY)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if state == PlantState_Choose {
+            <string>if state == PlantState_Plant {
+    // Draw potential vine planting positions
+    for (var xx=0; xx&lt;w; xx+=1) {
+        for (var yy=0; yy&lt;h; yy+=1) {
+            if scrTileIsValidPlant(xx, yy) {
+                draw_sprite(sprTilePlaceHere, 0, objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize)
+            }
+        }
+    }
+}
+else if state == PlantState_Choose {
+    // Draw potential vine choice positions
     with objVineBase {
         for (var xo=-1; xo&lt;=1; xo+=1) {
             for (var yo=-1; yo&lt;=1; yo+=1) {
@@ -129,7 +140,7 @@ ds_list_destroy(pathListY)
     }
 }
 else if state == PlantState_Draw {
-    // Draw the positions the player can next plant at
+    // Draw the positions the player can continue the path at
     if ds_list_size(pathListX) &gt; 0 {
         var lastX = pathListX[| ds_list_size(pathListX)-1]
         var lastY = pathListY[| ds_list_size(pathListY)-1]

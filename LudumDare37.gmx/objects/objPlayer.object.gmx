@@ -161,10 +161,21 @@ tileY = floor((y-objHouse.y) / global.tileSize)
 tileXWorld = objHouse.x + tileX*global.tileSize
 tileYWorld = objHouse.y + tileY*global.tileSize
 
-if objPlanter.state == PlantState_Choose {
+if objPlanter.state == PlantState_Plant {
+    // Plant vine
+    placeable = scrTileIsValidPlant(tileX, tileY)
+    if placeable and keyboard_check_pressed(ord('Z')) {
+        var vb = instance_create(tileXWorld+16, tileYWorld+16, objVineBase)
+        objPlanter.objectGrid[# tileX, tileY] = vb
+        objPlanter.state = PlantState_Choose
+    }
+}
+else if objPlanter.state == PlantState_Choose {
+    // Choose vine
     vineChoice = scrTileIsValidChoose(tileX, tileY)
     placeable = instance_exists(vineChoice)
     if placeable and keyboard_check_pressed(ord('Z')) {
+        // Create first seed
         objPlanter.state = PlantState_Draw
         ds_list_add(objPlanter.pathListX, vineChoice.tileX)
         ds_list_add(objPlanter.pathListY, vineChoice.tileY)
@@ -222,12 +233,6 @@ if objPlanter.state == PlantState_Draw {
         }
     }
     else with objCancelDraw image_index = 0
-}
-
-// Debug create sapling
-if keyboard_check_pressed(ord('X')) {
-    var vb = instance_create(tileXWorld+16, tileYWorld+16, objVineBase)
-    objPlanter.objectGrid[# tileX, tileY] = vb
 }
 
 uiAnimT += 1

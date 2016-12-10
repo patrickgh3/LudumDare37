@@ -3,8 +3,8 @@
   <caption></caption>
   <width>1500</width>
   <height>1500</height>
-  <vsnap>32</vsnap>
-  <hsnap>32</hsnap>
+  <vsnap>16</vsnap>
+  <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -60,6 +60,9 @@
     <instance objName="objPond" x="1040" y="848" name="inst_4B2FCA05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPond" x="976" y="400" name="inst_5505E775" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPond" x="624" y="1040" name="inst_ABB94DAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objUnfertileGround" x="560" y="560" name="inst_9B6B2036" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objUnfertileGround" x="592" y="560" name="inst_EC103660" locked="0" code="" scaleX="8" scaleY="9" colour="4294967295" rotation="0"/>
+    <instance objName="objUnfertileGround" x="560" y="784" name="inst_E30E924D" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bgDirt" x="560" y="560" w="32" h="32" xo="0" yo="0" id="10000956" name="inst_E3585856" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

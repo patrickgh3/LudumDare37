@@ -81,6 +81,7 @@
     <script>scripts\scrGrowVine.gml</script>
     <script>scripts\scrTileIsValidPath.gml</script>
     <script>scripts\scrTileIsValidChoose.gml</script>
+    <script>scripts\scrTileIsValidPlant.gml</script>
     <script>scripts\scrClearPath.gml</script>
   </scripts>
   <objects name="objects">
@@ -97,15 +98,17 @@
       <object>objects\objVineSegment</object>
     </objects>
     <object>objects\objPond</object>
+    <object>objects\objUnfertileGround</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
     <room>rooms\roomMain</room>
     <room>rooms\roomOriginalSize</room>
   </rooms>
-  <constants number="2">
+  <constants number="3">
     <constant name="PlantState_Choose">0</constant>
     <constant name="PlantState_Draw">1</constant>
+    <constant name="PlantState_Plant">2</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
