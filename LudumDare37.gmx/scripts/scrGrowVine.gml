@@ -13,6 +13,7 @@ with objPlanter {
         var dy = -(y2-y1)
         
         with vineBase.bulbObj {
+            visible=1
             var seg = instance_create(x, y, objVineSegment);
             x += dx*global.tileSize
             y += dy*global.tileSize
