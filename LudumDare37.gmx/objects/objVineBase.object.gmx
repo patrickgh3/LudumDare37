@@ -49,6 +49,10 @@ else if dy == 1 { seg.sprite_index=sprVineStartD bulbObj.image_angle=270 }
 
 lastDx = dx
 lastDy = dy
+
+doneGrowing = false
+maxLength = 10
+destroyVisible = false
 </string>
           </argument>
         </arguments>
@@ -94,7 +98,7 @@ lastDy = dy
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>visible=0
+            <string>//visible=0
 </string>
           </argument>
         </arguments>
@@ -117,8 +121,14 @@ lastDy = dy
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(sprMound,0,x-16,y-16)
-draw_self()
+            <string>//draw_sprite(sprMound,0,x-16,y-16)
+//draw_self()
+
+if destroyVisible {
+    draw_set_halign(fa_center)
+    draw_set_valign(fa_top)
+    draw_text(x+16, y-50, 'X - Spikes')
+}
 </string>
           </argument>
         </arguments>

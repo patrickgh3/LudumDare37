@@ -31,5 +31,11 @@ with objPlanter {
         }
     }
     
+    with vineBase {
+        if ds_list_size(segmentList) >= maxLength {
+            doneGrowing = true
+        }
+    }
+    
     scrClearPath()
 }
