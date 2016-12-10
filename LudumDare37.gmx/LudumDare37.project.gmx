@@ -66,6 +66,8 @@
     <script>scripts\scrClearListExceptForFirst.gml</script>
     <script>scripts\scrVineSpriteOneEdge.gml</script>
     <script>scripts\scrVineSpriteTwoEdges.gml</script>
+    <script>scripts\scrGrowVine.gml</script>
+    <script>scripts\scrTileIsValidChoose.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objPlayer</object>
@@ -85,6 +87,10 @@
     <room>rooms\roomMain</room>
     <room>rooms\roomOriginalSize</room>
   </rooms>
+  <constants number="2">
+    <constant name="PlantState_Choose">0</constant>
+    <constant name="PlantState_Draw">1</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
