@@ -19,6 +19,7 @@
     <sprite>sprites\sprArrowDown</sprite>
     <sprite>sprites\sprNoSelectSquare</sprite>
     <sprite>sprites\sprTilePlaceHere</sprite>
+    <sprite>sprites\sprPlayerFront</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
