@@ -16,13 +16,12 @@
       <sprite>sprites\sprEditorSquare32</sprite>
       <sprite>sprites\sprEditorP</sprite>
     </sprites>
-    <sprite>sprites\sprArrowDown</sprite>
-    <sprite>sprites\sprNoSelectSquare</sprite>
-    <sprite>sprites\sprTilePlaceHere</sprite>
-    <sprite>sprites\sprPlayerFront</sprite>
-    <sprite>sprites\sprPlayerBack</sprite>
-    <sprite>sprites\sprPlayerRight</sprite>
-    <sprite>sprites\sprPlayerLeft</sprite>
+    <sprites name="player">
+      <sprite>sprites\sprPlayerFront</sprite>
+      <sprite>sprites\sprPlayerBack</sprite>
+      <sprite>sprites\sprPlayerRight</sprite>
+      <sprite>sprites\sprPlayerLeft</sprite>
+    </sprites>
     <sprites name="vine">
       <sprite>sprites\sprVineCross</sprite>
       <sprite>sprites\sprVineH</sprite>
@@ -45,9 +44,13 @@
       <sprite>sprites\sprVineLoopD</sprite>
       <sprite>sprites\sprVineLoopU</sprite>
     </sprites>
+    <sprite>sprites\sprArrowDown</sprite>
+    <sprite>sprites\sprNoSelectSquare</sprite>
+    <sprite>sprites\sprTilePlaceHere</sprite>
     <sprite>sprites\sprSapling</sprite>
     <sprite>sprites\sprMound</sprite>
     <sprite>sprites\sprPond</sprite>
+    <sprite>sprites\sprCancelX</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
@@ -73,6 +76,7 @@
     <script>scripts\scrGrowVine.gml</script>
     <script>scripts\scrTileIsValidPath.gml</script>
     <script>scripts\scrTileIsValidChoose.gml</script>
+    <script>scripts\scrClearPath.gml</script>
   </scripts>
   <fonts name="fonts"/>
   <objects name="objects">
@@ -80,6 +84,7 @@
     <object>objects\objHouse</object>
     <object>objects\objCamera</object>
     <object>objects\objInit</object>
+    <object>objects\objCancelDraw</object>
     <objects name="plants">
       <object>objects\objPlanter</object>
       <object>objects\objSeed</object>

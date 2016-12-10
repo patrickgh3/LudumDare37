@@ -114,10 +114,7 @@ ds_list_destroy(pathListY)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// debug
-draw_text(view_xview+20, view_yview+20, state)
-
-if state == PlantState_Choose {
+            <string>if state == PlantState_Choose {
     with objVineBase {
         for (var xo=-1; xo&lt;=1; xo+=1) {
             for (var yo=-1; yo&lt;=1; yo+=1) {
