@@ -31,6 +31,10 @@ height = 24
 
 halfWidth = width/2
 halfHeight = height/2
+
+tileX = 0
+tileY = 0
+uiAnimT = 0
 </string>
           </argument>
         </arguments>
@@ -53,7 +57,8 @@ halfHeight = height/2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var left = keyboard_check(vk_left)
+            <string>/// movement
+var left = keyboard_check(vk_left)
 var right = keyboard_check(vk_right)
 var up = keyboard_check(vk_up)
 var down = keyboard_check(vk_down)
@@ -87,6 +92,69 @@ while y - halfHeight &lt; objHouse.bbox_top {
 
 while y + halfHeight - 1 &gt; objHouse.bbox_bottom {
     y -= 1
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// place seeds
+
+tileX = objHouse.x + floor((x-objHouse.x) / global.tileSize)*global.tileSize
+tileY = objHouse.y + floor((y-objHouse.y) / global.tileSize)*global.tileSize
+
+if keyboard_check_pressed(ord('Z')) {
+    instance_create(tileX, tileY, objSeed)
+}
+
+uiAnimT += 1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self()
+
+draw_set_color(c_white)
+if floor(uiAnimT/20) mod 2 == 0 {
+    draw_rectangle(tileX, tileY, tileX+global.tileSize-1, tileY+global.tileSize-1, true)
+    draw_sprite(sprArrowDown, 0, tileX+global.tileSize/2, tileY+4)
+}
+else {
+    draw_rectangle(tileX-1, tileY-1, tileX+global.tileSize, tileY+global.tileSize, true)
+    draw_sprite(sprArrowDown, 0, tileX+global.tileSize/2, tileY+3)
 }
 </string>
           </argument>

@@ -6,18 +6,29 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sprPlaceholderPlayer</sprite>
-    <sprite>sprites\sprEditorSquare32Center</sprite>
+    <sprites name="placeholder">
+      <sprite>sprites\sprPlaceholderPlayer</sprite>
+      <sprite>sprites\sprPlaceholderSeeds</sprite>
+    </sprites>
+    <sprites name="editor">
+      <sprite>sprites\sprEditorSquare32</sprite>
+    </sprites>
+    <sprite>sprites\sprArrowDown</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <scripts name="scripts"/>
+  <scripts name="scripts">
+    <script>scripts\scrInitGlobals.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\objPlayer</object>
     <object>objects\objHouse</object>
     <object>objects\objCamera</object>
+    <object>objects\objInit</object>
+    <object>objects\objSeed</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\roomInit</room>
     <room>rooms\roomTest</room>
   </rooms>
   <help>

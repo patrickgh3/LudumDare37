@@ -25,12 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>centerAngle = point_direction(objHouse.x, objHouse.y, objPlayer.x, objPlayer.y)
-centerDist = point_distance(objPlayer.x, objPlayer.y, objHouse.x, objHouse.y)
+            <string>var xCenter = (objHouse.bbox_left + objHouse.bbox_right) / 2
+var yCenter = (objHouse.bbox_top + objHouse.bbox_bottom) / 2
+
+centerAngle = point_direction(xCenter, yCenter, objPlayer.x, objPlayer.y)
+centerDist = point_distance(xCenter, yCenter, objPlayer.x, objPlayer.y)
 
 var dist = centerDist*1.25
-x = objHouse.x + lengthdir_x(dist, centerAngle)
-y = objPlayer.y + lengthdir_y(dist, centerAngle)
+x = xCenter + lengthdir_x(dist, centerAngle)
+y = yCenter + lengthdir_y(dist, centerAngle)
 
 view_xview = x - view_wview/2
 view_yview = y - view_hview/2
