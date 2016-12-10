@@ -7,6 +7,8 @@ or objPlanter.objectGrid[# scrTileX, scrTileY] != noone {
 }
 
 with objVineBase {
+    if doneGrowing continue
+    
     var xoCheck = scrTileX-tileX
     var yoCheck = scrTileY-tileY
     

@@ -240,6 +240,51 @@ uiAnimT += 1
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// destroy vines
+
+var foundCloseVine = false
+
+with objVineBase {
+    if point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 50
+    and ds_list_size(segmentList) &gt; 1 {
+        destroyVisible = true
+        if not foundCloseVine and keyboard_check_pressed(ord('X')) {
+            for (var i=0; i&lt;ds_list_size(segmentList); i+=1) {
+                with segmentList[| i] {
+                    instance_destroy()
+                }
+            }
+            with bulbObj instance_destroy()
+            instance_destroy()
+            objPlanter.objectGrid[# tileX, tileY] = noone
+            objPlanter.state = PlantState_Plant
+        }
+        foundCloseVine = true
+    }
+    else {
+        destroyVisible = false
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="73">
       <action>
