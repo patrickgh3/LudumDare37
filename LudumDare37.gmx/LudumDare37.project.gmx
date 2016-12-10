@@ -5,6 +5,22 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
+<<<<<<< HEAD
+  <sprites name="sprites"/>
+  <backgrounds name="background">
+    <background>background\bgTilled</background>
+    <background>background\bgDirt</background>
+    <background>background\bgGrass</background>
+    <background>background\bgTiles</background>
+    <background>background\bgGlassHorizontal</background>
+    <background>background\bgGlassHorizontalBottom</background>
+    <background>background\bgTopGlass</background>
+    <background>background\bgTopBeams</background>
+  </backgrounds>
+  <paths name="paths"/>
+  <rooms name="rooms">
+    <room>rooms\room0</room>
+=======
   <sprites name="sprites">
     <sprites name="placeholder">
       <sprite>sprites\sprPlaceholderPlayer</sprite>
@@ -38,6 +54,7 @@
   <rooms name="rooms">
     <room>rooms\roomInit</room>
     <room>rooms\roomTest</room>
+>>>>>>> 98e4fb94142225fe8c9a677a6f5c7801be11b905
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
