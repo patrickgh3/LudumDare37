@@ -5,9 +5,18 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\sprPlaceholderPlayer</sprite>
+    <sprite>sprites\sprEditorSquare32Center</sprite>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts"/>
+  <objects name="objects">
+    <object>objects\objPlayer</object>
+    <object>objects\objHouse</object>
+    <object>objects\objCamera</object>
+  </objects>
   <rooms name="rooms">
     <room>rooms\roomTest</room>
   </rooms>
