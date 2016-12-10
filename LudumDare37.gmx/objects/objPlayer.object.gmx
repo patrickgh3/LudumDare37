@@ -28,9 +28,11 @@
             <string>walkSpeed = 2
 width = 24
 height = 24
-
 halfWidth = width/2
 halfHeight = height/2
+
+numSeedsPerRound = 8
+numSeeds = numSeedsPerRound
 
 tileX = 0
 tileY = 0
@@ -137,23 +139,29 @@ tileY = floor((y-objHouse.y) / global.tileSize)
 tileXWorld = objHouse.x + tileX*global.tileSize
 tileYWorld = objHouse.y + tileY*global.tileSize
 
-placeable = scrPlanterTileIsNext(tileX, tileY)
+placeable = scrPlanterTileIsNext(tileX, tileY) and numSeeds &gt; 0
 
 if placeable and keyboard_check_pressed(ord('Z')) {
     var s = instance_create(tileXWorld, tileYWorld, objSeed)
     objPlanter.objectGrid[# tileX, tileY] = s
+    
     ds_list_add(objPlanter.pathListX, tileX)
     ds_list_add(objPlanter.pathListY, tileY)
+    
+    numSeeds -= 1
 }
 
 if keyboard_check_pressed(ord('X')) {
     var vb = instance_create(tileXWorld, tileYWorld, objVineBase)
     objPlanter.objectGrid[# tileX, tileY] = vb
+    
     ds_list_add(objPlanter.pathListX, tileX)
     ds_list_add(objPlanter.pathListY, tileY)
 }
 
 if keyboard_check_pressed(ord('C')) {
+    
+    numSeeds = numSeedsPerRound
     with objPlanter {
         var startX = pathListX[| 0]
         var startY = pathListY[| 0]
@@ -216,7 +224,8 @@ uiAnimT += 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if placeable {
+            <string>// Draw square highlight
+if placeable {
     var rectOff = 0
     var arrowOff = 0
     if floor(uiAnimT/20) mod 2 != 0 {
@@ -232,6 +241,12 @@ uiAnimT += 1
 else {
     draw_sprite_ext(sprNoSelectSquare, 0, tileXWorld, tileYWorld, 1, 1, 0, c_white, 1)
 }
+
+// Draw num seeds
+draw_set_color(c_white)
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
+draw_text(x-10, y-38, 'x'+string(numSeeds))
 </string>
           </argument>
         </arguments>
