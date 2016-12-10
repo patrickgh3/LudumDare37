@@ -50,6 +50,7 @@
     <sprite>sprites\sprPond</sprite>
     <sprite>sprites\sprPond2</sprite>
     <sprite>sprites\sprPond3</sprite>
+    <sprite>sprites\sprWell</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
