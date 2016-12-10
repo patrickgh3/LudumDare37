@@ -158,7 +158,7 @@ if objPlanter.state == PlantState_Choose {
 }
 
 if objPlanter.state == PlantState_Draw {
-    placeable = scrPlanterTileIsNext(tileX, tileY) and numSeeds &gt; 0
+    placeable = scrTileIsValidPath(tileX, tileY) and numSeeds &gt; 0
     if placeable and keyboard_check_pressed(ord('Z')) {
         var s = instance_create(tileXWorld, tileYWorld, objSeed)
         objPlanter.objectGrid[# tileX, tileY] = s

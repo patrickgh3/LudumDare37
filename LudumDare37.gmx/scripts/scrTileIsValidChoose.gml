@@ -1,7 +1,8 @@
 var scrTileX = argument0
 var scrTileY = argument1
 
-if scrTileX<0 or scrTileX>objPlanter.w or scrTileY<0 or scrTileY > objPlanter.h {
+if scrTileX<0 or scrTileX>=objPlanter.w or scrTileY<0 or scrTileY>=objPlanter.h
+or objPlanter.objectGrid[# scrTileX, scrTileY] != noone {
     return noone
 }
 

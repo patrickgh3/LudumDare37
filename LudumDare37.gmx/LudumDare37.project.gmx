@@ -70,13 +70,14 @@
   <scripts name="scripts">
     <script>scripts\scrInitGlobals.gml</script>
     <script>scripts\scrDrawRectSize.gml</script>
-    <script>scripts\scrPlanterTileIsNext.gml</script>
     <script>scripts\scrClearListExceptForFirst.gml</script>
     <script>scripts\scrVineSpriteOneEdge.gml</script>
     <script>scripts\scrVineSpriteTwoEdges.gml</script>
     <script>scripts\scrGrowVine.gml</script>
+    <script>scripts\scrTileIsValidPath.gml</script>
     <script>scripts\scrTileIsValidChoose.gml</script>
   </scripts>
+  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\objPlayer</object>
     <object>objects\objHouse</object>
