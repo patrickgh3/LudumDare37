@@ -12,6 +12,7 @@
     </sprites>
     <sprites name="editor">
       <sprite>sprites\sprEditorSquare32</sprite>
+      <sprite>sprites\sprEditorP</sprite>
     </sprites>
     <sprite>sprites\sprArrowDown</sprite>
   </sprites>
@@ -26,6 +27,7 @@
     <object>objects\objCamera</object>
     <object>objects\objInit</object>
     <object>objects\objSeed</object>
+    <object>objects\objPlanter</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>

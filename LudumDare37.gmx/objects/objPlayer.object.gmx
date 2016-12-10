@@ -34,6 +34,8 @@ halfHeight = height/2
 
 tileX = 0
 tileY = 0
+tileXWorld = 0
+tileYWorld = 0
 uiAnimT = 0
 </string>
           </argument>
@@ -115,11 +117,18 @@ while y + halfHeight - 1 &gt; objHouse.bbox_bottom {
             <kind>1</kind>
             <string>/// place seeds
 
-tileX = objHouse.x + floor((x-objHouse.x) / global.tileSize)*global.tileSize
-tileY = objHouse.y + floor((y-objHouse.y) / global.tileSize)*global.tileSize
+tileX = floor((x-objHouse.x) / global.tileSize)
+tileY = floor((y-objHouse.y) / global.tileSize)
+tileXWorld = objHouse.x + tileX*global.tileSize
+tileYWorld = objHouse.y + tileY*global.tileSize
 
-if keyboard_check_pressed(ord('Z')) {
-    instance_create(tileX, tileY, objSeed)
+gridObject = objPlanter.grid[# tileX, tileY]
+
+placeable = gridObject == noone
+
+if placeable and keyboard_check_pressed(ord('Z')) {
+    var seed = instance_create(tileXWorld, tileYWorld, objSeed)
+    objPlanter.grid[# tileX, tileY] = seed
 }
 
 uiAnimT += 1
@@ -147,14 +156,18 @@ uiAnimT += 1
             <kind>1</kind>
             <string>draw_self()
 
-draw_set_color(c_white)
-if floor(uiAnimT/20) mod 2 == 0 {
-    draw_rectangle(tileX, tileY, tileX+global.tileSize-1, tileY+global.tileSize-1, true)
-    draw_sprite(sprArrowDown, 0, tileX+global.tileSize/2, tileY+4)
-}
-else {
-    draw_rectangle(tileX-1, tileY-1, tileX+global.tileSize, tileY+global.tileSize, true)
-    draw_sprite(sprArrowDown, 0, tileX+global.tileSize/2, tileY+3)
+if placeable {
+    var rectOff = 0
+    var arrowOff = 0
+    if floor(uiAnimT/20) mod 2 != 0 {
+        rectOff = 1
+        arrowOff = 1
+    }
+    
+    draw_set_color(c_white)
+    draw_rectangle(tileXWorld-rectOff, tileYWorld-rectOff,
+        tileXWorld+global.tileSize-1+rectOff, tileYWorld+global.tileSize-1+rectOff, true)
+    draw_sprite(sprArrowDown, 0, tileXWorld+global.tileSize/2, tileYWorld+4-arrowOff)
 }
 </string>
           </argument>
