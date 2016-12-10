@@ -96,8 +96,8 @@ ds_list_destroy(pathList)
     }
 }
 
-if ds_list_size(pathSize) &gt; 1 {
-    for (var i=1; i&lt;ds_list_size(pathSize); i+=1) {
+if ds_list_size(pathList) &gt; 1 {
+    for (var i=1; i&lt;ds_list_size(pathList); i+=1) {
         var coords1 = pathList[| i]
         var x1 = coords1 div 1000
         var y1 = coords1 mod 1000
@@ -106,7 +106,12 @@ if ds_list_size(pathSize) &gt; 1 {
         var y2 = coords2 mod 1000
         
         draw_set_color(c_white)
-        draw_line(x1, y1, x2, y2)
+        var xs = global.tileSize
+        var ys = global.tileSize
+        var xo = objHouse.x + global.tileSize/2
+        var yo = objHouse.y + global.tileSize/2
+        
+        draw_line(xo+xs*x1, yo+ys*y1, xo+xs*x2, yo+ys*y2)
     }
 }
 </string>
