@@ -18,6 +18,8 @@
     </sprites>
     <sprite>sprites\sprArrowDown</sprite>
     <sprite>sprites\sprPlayerFront</sprite>
+    <sprite>sprites\sprPlayerRight</sprite>
+    <sprite>sprites\sprPlayerLeft</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
