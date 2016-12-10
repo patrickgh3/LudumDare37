@@ -20,8 +20,25 @@
     <sprite>sprites\sprNoSelectSquare</sprite>
     <sprite>sprites\sprTilePlaceHere</sprite>
     <sprite>sprites\sprPlayerFront</sprite>
+    <sprite>sprites\sprPlayerBack</sprite>
     <sprite>sprites\sprPlayerRight</sprite>
     <sprite>sprites\sprPlayerLeft</sprite>
+    <sprites name="vine">
+      <sprite>sprites\sprVineH</sprite>
+      <sprite>sprites\sprVineV</sprite>
+      <sprite>sprites\sprVineL2D</sprite>
+      <sprite>sprites\sprVineD2L</sprite>
+      <sprite>sprites\sprVineR2D</sprite>
+      <sprite>sprites\sprVineD2R</sprite>
+      <sprite>sprites\sprVineL2U</sprite>
+      <sprite>sprites\sprVineU2L</sprite>
+      <sprite>sprites\sprVineR2U</sprite>
+      <sprite>sprites\sprVineU2R</sprite>
+      <sprite>sprites\sprLeafUp</sprite>
+      <sprite>sprites\sprLeafDown</sprite>
+      <sprite>sprites\sprLeafLeft</sprite>
+      <sprite>sprites\sprLeafRight</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
