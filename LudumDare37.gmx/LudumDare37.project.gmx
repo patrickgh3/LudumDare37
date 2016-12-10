@@ -40,6 +40,10 @@
       <sprite>sprites\sprVineStartU</sprite>
       <sprite>sprites\sprVineStartD</sprite>
       <sprite>sprites\sprBulb</sprite>
+      <sprite>sprites\sprVineLoopL</sprite>
+      <sprite>sprites\sprVineLoopR</sprite>
+      <sprite>sprites\sprVineLoopD</sprite>
+      <sprite>sprites\sprVineLoopU</sprite>
     </sprites>
     <sprite>sprites\sprSapling</sprite>
     <sprite>sprites\sprMound</sprite>
