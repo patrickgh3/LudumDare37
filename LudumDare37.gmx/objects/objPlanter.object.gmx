@@ -88,8 +88,8 @@ ds_list_destroy(pathListY)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>pathAnimT += 1
-pathAnimYOff = round(2*sin(pathAnimT/80*pi*2))
+            <string>//pathAnimT += 1
+//pathAnimYOff = round(2*sin(pathAnimT/80*pi*2))
 </string>
           </argument>
         </arguments>
@@ -143,12 +143,13 @@ if ds_list_size(pathListX) &gt; 1 {
         var x2 = pathListX[| i-1]*xs+xo
         var y2 = pathListY[| i-1]*ys+yo
         
-        draw_set_alpha(0.4)
-        draw_set_color(make_color_rgb(157,196,84))
+        draw_set_alpha(0.7)
+        //draw_set_color(make_color_rgb(157,196,84))
+        draw_set_color(make_color_rgb(51,47,38))
         //draw_line_width(lerp(x1,x2,0.4), lerp(y1,y2,0.4), lerp(x1,x2,0.6), lerp(y1,y2,0.6), 6)
         //draw_line_width(lerp(x1,x2,0.8), lerp(y1,y2,0.8), lerp(x1,x2,1), lerp(y1,y2,1), 6)
         //draw_line_width(lerp(x1,x2,0), lerp(y1,y2,0), lerp(x1,x2,0.2), lerp(y1,y2,0.2), 6)
-        draw_line_width(x1, y1, x2, y2, 6)
+        draw_line_width(x1, y1, x2, y2, 4)
         draw_set_alpha(1)
         draw_set_color(c_white)
     }

@@ -60,6 +60,7 @@
     <script>scripts\scrPlanterTileIsNext.gml</script>
     <script>scripts\scrClearListExceptForFirst.gml</script>
   </scripts>
+  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\objPlayer</object>
     <object>objects\objHouse</object>

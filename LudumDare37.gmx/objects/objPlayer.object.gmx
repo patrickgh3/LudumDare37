@@ -31,7 +31,7 @@ height = 24
 halfWidth = width/2
 halfHeight = height/2
 
-numSeedsPerRound = 8
+numSeedsPerRound = 4
 numSeeds = numSeedsPerRound
 
 tileX = 0
@@ -75,16 +75,20 @@ var down = keyboard_check(vk_down)
 
 if left {
     x -= walkSpeed
+    sprite_index = sprPlayerLeft
 }
 else if right {
     x += walkSpeed
+    sprite_index = sprPlayerRight
 }
 
 if up {
     y -= walkSpeed
+    sprite_index = sprPlayerBack
 }
 else if down {
     y += walkSpeed
+    sprite_index = sprPlayerFront
 }
 
 // out of bounds push back in
@@ -105,6 +109,10 @@ while y + halfHeight - 1 &gt; objHouse.bbox_bottom {
 }
 
 if x != xLast or y != yLast {
+    // coming out of standstill
+    if image_speed == 0 {
+        image_index = 1
+    }
     image_speed = 1/10
 }
 else {
@@ -149,6 +157,47 @@ if placeable and keyboard_check_pressed(ord('Z')) {
     ds_list_add(objPlanter.pathListY, tileY)
     
     numSeeds -= 1
+    
+    if numSeeds == 0 {
+        numSeeds = numSeedsPerRound
+        with objPlanter {
+            var startX = pathListX[| 0]
+            var startY = pathListY[| 0]
+            var vineBase = objectGrid[# startX, startY]
+            
+            for (var i=1; i&lt;ds_list_size(pathListY); i+=1) {
+                //var xP = pathListX[| i-2]
+                //var yP = pathListX[| i-2]
+                var x1 = pathListX[| i-1]
+                var y1 = pathListY[| i-1]
+                var x2 = pathListX[| i]
+                var y2 = pathListY[| i]
+                var dx = -(x2-x1)
+                var dy = -(y2-y1)
+                
+                with vineBase.bulbObj {
+                    var prevSeg = vineBase.segmentList[| ds_list_size(vineBase.segmentList)-1];
+                    x += dx*global.tileSize
+                    y += dy*global.tileSize
+                    var seg = instance_create(x, y, objVineSegment);
+                    ds_list_add(vineBase.segmentList, seg)
+                }
+            }
+            
+            // Clear the last path and destroy seeds
+            scrClearListExceptForFirst(pathListX)
+            scrClearListExceptForFirst(pathListY)
+            for (var i=0; i&lt;w; i+=1) {
+                for (var j=0; j&lt;h; j+=1) {
+                    var obj = objectGrid[# i, j]
+                    if instance_exists(obj) and obj.object_index == objSeed {
+                        with obj instance_destroy()
+                        objectGrid[# i, j] = noone
+                    }
+                }
+            }
+        }
+    }
 }
 
 if keyboard_check_pressed(ord('X')) {
@@ -157,48 +206,6 @@ if keyboard_check_pressed(ord('X')) {
     
     ds_list_add(objPlanter.pathListX, tileX)
     ds_list_add(objPlanter.pathListY, tileY)
-}
-
-if keyboard_check_pressed(ord('C')) {
-    
-    numSeeds = numSeedsPerRound
-    with objPlanter {
-        var startX = pathListX[| 0]
-        var startY = pathListY[| 0]
-        var vineBase = objectGrid[# startX, startY]
-        
-        for (var i=1; i&lt;ds_list_size(pathListY); i+=1) {
-            //var xP = pathListX[| i-2]
-            //var yP = pathListX[| i-2]
-            var x1 = pathListX[| i-1]
-            var y1 = pathListY[| i-1]
-            var x2 = pathListX[| i]
-            var y2 = pathListY[| i]
-            var dx = -(x2-x1)
-            var dy = -(y2-y1)
-            
-            with vineBase.bulbObj {
-                var prevSeg = vineBase.segmentList[| ds_list_size(vineBase.segmentList)-1];
-                x += dx*global.tileSize
-                y += dy*global.tileSize
-                var seg = instance_create(x, y, objVineSegment);
-                ds_list_add(vineBase.segmentList, seg)
-            }
-        }
-        
-        // Clear the last path and destroy seeds
-        scrClearListExceptForFirst(pathListX)
-        scrClearListExceptForFirst(pathListY)
-        for (var i=0; i&lt;w; i+=1) {
-            for (var j=0; j&lt;h; j+=1) {
-                var obj = objectGrid[# i, j]
-                if instance_exists(obj) and obj.object_index == objSeed {
-                    with obj instance_destroy()
-                    objectGrid[# i, j] = noone
-                }
-            }
-        }
-    }
 }
 
 uiAnimT += 1
