@@ -25,11 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>w = 11
+            <string>
+w = 11
 h = 11
+
+// grid of objects at each location (objSeed, objVineBase, etc)
 objectGrid = ds_grid_create(w, h)
 ds_grid_clear(objectGrid, noone)
-pathList = ds_list_create()
+
+// list of path positions the player has set
+pathListX = ds_list_create()
+pathListY = ds_list_create()
+
 pathAnimT = 0
 pathAnimYOff = 0
 
@@ -57,7 +64,8 @@ sprite_index = -1
           <argument>
             <kind>1</kind>
             <string>ds_grid_destroy(objectGrid)
-ds_list_destroy(pathList)
+ds_list_destroy(pathListX)
+ds_list_destroy(pathListY)
 </string>
           </argument>
         </arguments>
@@ -104,10 +112,10 @@ pathAnimYOff = round(2*sin(pathAnimT/80*pi*2))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ds_list_size(pathList) &gt; 0 {
-    var lastCoords = pathList[| ds_list_size(pathList)-1]
-    var lastX = lastCoords div 1000
-    var lastY = lastCoords mod 1000
+            <string>// Draw the positions the player can next plant at
+if ds_list_size(pathListX) &gt; 0 {
+    var lastX = pathListX[| ds_list_size(pathListX)-1]
+    var lastY = pathListY[| ds_list_size(pathListY)-1]
     
     for (var xo=-1; xo&lt;=1; xo+=1) {
         for (var yo=-1; yo&lt;=1; yo+=1) {
@@ -122,24 +130,25 @@ pathAnimYOff = round(2*sin(pathAnimT/80*pi*2))
     }
 }
 
-if ds_list_size(pathList) &gt; 1 {
-    for (var i=1; i&lt;ds_list_size(pathList); i+=1) {
-        var coords1 = pathList[| i]
-        var x1 = coords1 div 1000
-        var y1 = coords1 mod 1000
-        var coords2 = pathList[| i-1]
-        var x2 = coords2 div 1000
-        var y2 = coords2 mod 1000
-        
-        draw_set_color(c_white)
-        var xs = global.tileSize
-        var ys = global.tileSize
-        var xo = objHouse.x + global.tileSize/2
-        var yo = objHouse.y + global.tileSize/2+pathAnimYOff
+// Draw a line along the path
+if ds_list_size(pathListX) &gt; 1 {
+    var xs = global.tileSize
+    var ys = global.tileSize
+    var xo = objHouse.x + global.tileSize/2
+    var yo = objHouse.y + global.tileSize/2+pathAnimYOff
+    
+    for (var i=1; i&lt;ds_list_size(pathListX); i+=1) {
+        var x1 = pathListX[| i]*xs+xo
+        var y1 = pathListY[| i]*ys+yo
+        var x2 = pathListX[| i-1]*xs+xo
+        var y2 = pathListY[| i-1]*ys+yo
         
         draw_set_alpha(0.4)
         draw_set_color(make_color_rgb(157,196,84))
-        draw_line_width(xo+xs*x1, yo+ys*y1, xo+xs*x2, yo+ys*y2, 6)
+        //draw_line_width(lerp(x1,x2,0.4), lerp(y1,y2,0.4), lerp(x1,x2,0.6), lerp(y1,y2,0.6), 6)
+        //draw_line_width(lerp(x1,x2,0.8), lerp(y1,y2,0.8), lerp(x1,x2,1), lerp(y1,y2,1), 6)
+        //draw_line_width(lerp(x1,x2,0), lerp(y1,y2,0), lerp(x1,x2,0.2), lerp(y1,y2,0.2), 6)
+        draw_line_width(x1, y1, x2, y2, 6)
         draw_set_alpha(1)
         draw_set_color(c_white)
     }
