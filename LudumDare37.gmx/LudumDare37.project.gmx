@@ -42,6 +42,7 @@
     </sprites>
     <sprite>sprites\sprSapling</sprite>
     <sprite>sprites\sprMound</sprite>
+    <sprite>sprites\sprPond</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
@@ -52,6 +53,8 @@
     <background>background\bgGlassHorizontalBottom</background>
     <background>background\bgTopGlass</background>
     <background>background\bgTopBeams</background>
+    <background>background\bgRockBig</background>
+    <background>background\bgRockSmall</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
