@@ -56,6 +56,7 @@
     <background>background\bgRockBig</background>
     <background>background\bgRockSmall</background>
     <background>background\bgTree</background>
+    <background>background\bgFence</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
