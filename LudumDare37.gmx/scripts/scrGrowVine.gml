@@ -2,7 +2,6 @@ with objPlanter {
     var startX = pathListX[| 0]
     var startY = pathListY[| 0]
     var vineBase = objectGrid[# startX, startY]
-    show_debug_message(string(startX)+', '+string(startY))
     
     for (var i=1; i<ds_list_size(pathListY); i+=1) {
         var x1 = pathListX[| i-1]

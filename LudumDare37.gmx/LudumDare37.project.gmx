@@ -91,7 +91,6 @@
     <script>scripts\scrTileIsValidPlant.gml</script>
     <script>scripts\scrClearPath.gml</script>
   </scripts>
-  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\objPlayer</object>
     <object>objects\objHouse</object>
