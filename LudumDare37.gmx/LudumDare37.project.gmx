@@ -103,7 +103,6 @@
     <script>scripts\scrVineSpriteTwoEdges.gml</script>
     <script>scripts\scrGrowVine.gml</script>
     <script>scripts\scrTileIsValidPath.gml</script>
-    <script>scripts\scrGrowVine.gml</script>
     <script>scripts\scrTileIsValidChoose.gml</script>
     <script>scripts\scrTileIsValidPlant.gml</script>
     <script>scripts\scrClearPath.gml</script>
