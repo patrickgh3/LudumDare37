@@ -47,12 +47,14 @@ for (var i=0; i&lt;numShine; i+=1) {
 shine1 = instance_create(x+47, y+45, objPondShine)
 with shine1 {
     image_alpha = 0.9
+    parent=other.id
     animT = 0
 }
 shine2 = instance_create(x+47, y+45, objPondShine)
 with shine2 {
     image_alpha = 0.15
     image_angle = 180
+    parent=other.id
     animT = 60
 }
 

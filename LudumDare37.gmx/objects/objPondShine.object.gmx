@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>animT = 0
+            <string>parent = 0
+animT = 0
 </string>
           </argument>
         </arguments>

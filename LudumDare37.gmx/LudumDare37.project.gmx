@@ -103,6 +103,7 @@
     <sprite>sprites\sprGoat</sprite>
     <sprite>sprites\sprCrash</sprite>
     <sprite>sprites\sprShine1</sprite>
+    <sprite>sprites\sprWetplace</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
