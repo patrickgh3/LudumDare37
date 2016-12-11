@@ -225,7 +225,7 @@ if objPlanter.state == PlantState_Draw {
     // Extend the path
     placeable = scrTileIsValidPath(tileX, tileY) and numSeeds &gt; 0
     if placeable and keyboard_check_pressed(ord('Z')) {
-        var s = instance_create(tileXWorld, tileYWorld, objSeed)
+        var s = instance_create(tileXWorld+16, tileYWorld+16, objSeed)
         objPlanter.objectGrid[# tileX, tileY] = s
         
         ds_list_add(objPlanter.pathListX, tileX)
