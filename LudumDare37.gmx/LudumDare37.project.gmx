@@ -80,6 +80,9 @@
     <sprite>sprites\sprWater</sprite>
     <sprite>sprites\sprKeyZ</sprite>
     <sprite>sprites\sprKeyX</sprite>
+    <sprite>sprites\sprSeedbag</sprite>
+    <sprite>sprites\sprArrow</sprite>
+    <sprite>sprites\sprSparkle</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
@@ -128,6 +131,7 @@
     </objects>
     <object>objects\objPond</object>
     <object>objects\objUnfertileGround</object>
+    <object>objects\objSparkle</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>

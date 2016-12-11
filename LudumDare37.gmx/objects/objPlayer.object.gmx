@@ -229,7 +229,7 @@ if objPlanter.state == PlantState_Draw {
         numSeeds -= 1
         CanDisplay = 1
         
-        audio_play_sound(sndDig, 0, false)
+        audio_play_sound(sndWatering, 0, false)
         
         if numSeeds == 0 {
             scrGrowVine()
