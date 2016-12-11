@@ -11,6 +11,7 @@
     <sound>sound\sndGrow</sound>
     <sound>sound\sndStep1</sound>
     <sound>sound\sndCancelBoop</sound>
+    <sound>sound\sndHitWallBoop</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="placeholder">
@@ -132,6 +133,7 @@
     <object>objects\objPond</object>
     <object>objects\objUnfertileGround</object>
     <object>objects\objSparkle</object>
+    <object>objects\objWall</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
