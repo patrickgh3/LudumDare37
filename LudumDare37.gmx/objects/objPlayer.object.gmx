@@ -171,6 +171,10 @@ tileY = floor((y-objHouse.y) / global.tileSize)
 tileXWorld = objHouse.x + tileX*global.tileSize
 tileYWorld = objHouse.y + tileY*global.tileSize
 
+if objPlanter.state == PlantState_Destroy {
+    placeable = false
+}
+
 if objPlanter.state == PlantState_Plant {
     // Plant vine
     placeable = scrTileIsValidPlant(tileX, tileY)
@@ -275,21 +279,15 @@ uiAnimT += 1
 
 var foundCloseVine = false
 with objVineBase {
-    if point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 50
+    if not destroying
+    and point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 50
     and ds_list_size(segmentList) &gt; 1
     and objPlanter.state == PlantState_Choose
     and not bulbObj.growing {
         destroyVisible = true
         if not foundCloseVine and keyboard_check_pressed(ord('X')) {
-            for (var i=0; i&lt;ds_list_size(segmentList); i+=1) {
-                with segmentList[| i] {
-                    instance_destroy()
-                }
-            }
-            with bulbObj instance_destroy()
-            instance_destroy()
-            objPlanter.objectGrid[# tileX, tileY] = noone
-            objPlanter.state = PlantState_Plant
+            destroying = true
+            objPlanter.state = PlantState_Destroy
         }
         foundCloseVine = true
     }

@@ -53,6 +53,11 @@ lastDy = dy
 doneGrowing = false
 maxLength = 10
 destroyVisible = false
+
+destroying = false
+destroyT = 0
+spikeIndex = 0
+destroyState = 1
 </string>
           </argument>
         </arguments>
@@ -76,6 +81,93 @@ destroyVisible = false
           <argument>
             <kind>1</kind>
             <string>ds_list_destroy(segmentList)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Destroying
+
+if destroying {
+    if destroyState == 1 {
+        destroyT += 1
+        if destroyT mod 3 == 0 {
+            if spikeIndex &lt; ds_list_size(segmentList) {
+                with segmentList[| spikeIndex] {
+                    sprite_index = scrVineToSpikeSprite(sprite_index)
+                }
+            }
+            else {
+                with bulbObj sprite_index = sprBulbaspike
+                destroyState = 2
+                destroyT = 0
+            }
+            audio_play_sound(sndThorn1, 0, false)
+            spikeIndex += 1
+        }
+    }
+    else if destroyState == 2 {
+        destroyT += 1
+        if destroyT == 60 {
+            destroyState = 3
+            destroyT = 0
+            spikeIndex = 0
+        }
+    }
+    else if destroyState == 3 {
+        destroyT += 1
+        if destroyT mod 3 == 0 {
+            if spikeIndex &lt; ds_list_size(segmentList) {
+                var vineObj = segmentList[| spikeIndex]
+            }
+            else {
+                var vineObj = bulbObj
+                destroyState = 4
+                destroyT = 0
+            }
+            with vineObj {
+                var fx = instance_create(x, y, objFx);
+                fx.sprite_index = sprite_index
+                fx.direction = random(360)
+                fx.speed = 1.2
+                fx.dSpeed = -0.06
+                fx.dAlpha = -1/random_range(50, 80)
+                fx.dAngle = choose(1, -1)*random_range(1.5, 3)
+                fx.ddAngle = sign(fx.dAngle) * -0.1
+                fx.image_angle += random_range(-10, 10)
+                
+                instance_destroy()
+            }
+            audio_play_sound(sndThorn2, 0, false)
+            spikeIndex += 1
+        }
+    }
+    else if destroyState == 4 {
+        destroyT += 1
+        if destroyT == 50 {
+            instance_destroy()
+            objPlanter.objectGrid[# tileX, tileY] = noone
+            objPlanter.state = PlantState_Plant
+        }
+    }
+}
 </string>
           </argument>
         </arguments>

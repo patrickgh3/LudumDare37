@@ -12,6 +12,8 @@
     <sound>sound\sndStep1</sound>
     <sound>sound\sndCancelBoop</sound>
     <sound>sound\sndHitWallBoop</sound>
+    <sound>sound\sndThorn1</sound>
+    <sound>sound\sndThorn2</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="placeholder">
@@ -109,13 +111,13 @@
     <script>scripts\scrInitGlobals.gml</script>
     <script>scripts\scrDrawRectSize.gml</script>
     <script>scripts\scrClearListExceptForFirst.gml</script>
-    <script>scripts\scrVineSpriteOneEdge.gml</script>
     <script>scripts\scrVineSpriteTwoEdges.gml</script>
     <script>scripts\scrGrowVine.gml</script>
     <script>scripts\scrTileIsValidPath.gml</script>
     <script>scripts\scrTileIsValidChoose.gml</script>
     <script>scripts\scrTileIsValidPlant.gml</script>
     <script>scripts\scrClearPath.gml</script>
+    <script>scripts\scrVineToSpikeSprite.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objPlayer</object>
@@ -136,16 +138,18 @@
     <object>objects\objSparkle</object>
     <object>objects\objWall</object>
     <object>objects\objGoat</object>
+    <object>objects\objFx</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
     <room>rooms\roomMain</room>
     <room>rooms\roomOriginalSize</room>
   </rooms>
-  <constants number="3">
+  <constants number="4">
     <constant name="PlantState_Choose">0</constant>
     <constant name="PlantState_Draw">1</constant>
     <constant name="PlantState_Plant">2</constant>
+    <constant name="PlantState_Destroy">3</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
