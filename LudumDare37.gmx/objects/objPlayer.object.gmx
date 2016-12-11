@@ -168,6 +168,7 @@ if objPlanter.state == PlantState_Plant {
         var vb = instance_create(tileXWorld+16, tileYWorld+16, objVineBase)
         objPlanter.objectGrid[# tileX, tileY] = vb
         objPlanter.state = PlantState_Choose
+        audio_play_sound(sndPlop, 0, false)
     }
 }
 else if objPlanter.state == PlantState_Choose {
@@ -218,8 +219,11 @@ if objPlanter.state == PlantState_Draw {
         numSeeds -= 1
         CanDisplay = 1
         
+        audio_play_sound(sndDig, 0, false)
+        
         if numSeeds == 0 {
             scrGrowVine()
+            audio_play_sound(sndGrow, 0, false)
         }
     }
     
@@ -353,6 +357,10 @@ if CanDisplay = 1 draw_sprite(sprWateringCan,abs(numSeeds-4),x,y-53)
           <argument>
             <kind>1</kind>
             <string>draw_sprite_ext(sprite_index, image_index, x, y-12, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+
+if objPlanter.state == PlantState_Plant {
+    draw_sprite_ext(sprBulb, 0, x, y-38, 1, 1, 90, c_white, 1)
+}
 </string>
           </argument>
         </arguments>
