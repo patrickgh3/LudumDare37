@@ -89,6 +89,7 @@
     <sprite>sprites\sprArrow</sprite>
     <sprite>sprites\sprSparkle</sprite>
     <sprite>sprites\sprGoat</sprite>
+    <sprite>sprites\sprCrash</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
@@ -140,6 +141,7 @@
     <object>objects\objSparkle</object>
     <object>objects\objWall</object>
     <object>objects\objGoat</object>
+    <object>objects\objCrash</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>

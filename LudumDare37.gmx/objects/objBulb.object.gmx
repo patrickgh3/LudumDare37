@@ -128,8 +128,8 @@ yLast = y
     if fractionToStopAt != 1 and path_position &gt; fractionToStopAt {
         path_position = fractionToStopAt
         event_user(0)
+        repeat(3) instance_create(x,y,objCrash)
         audio_play_sound(sndHitWallBoop, 0, false)
-        // TODO: spark or some effect here
     }
 }
 </string>
