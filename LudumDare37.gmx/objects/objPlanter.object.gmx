@@ -28,7 +28,7 @@
             <string>
 w = 9
 h = 9
-
+arrowRotation=0
 // grid of objects at each location (objSeed, objVineBase, etc)
 objectGrid = ds_grid_create(w, h)
 ds_grid_clear(objectGrid, noone)
@@ -132,8 +132,14 @@ else if state == PlantState_Choose {
                 if abs(xo) == abs(yo) continue
                 var xx = tileX+xo
                 var yy = tileY+yo
+                
+                if xo=1 arrowRotation = 0
+                if yo=-1 arrowRotation = 90
+                if xo=-1 arrowRotation = 180
+                if yo=1 arrowRotation = 270
+                
                 if scrTileIsValidChoose(xx, yy) {
-                    draw_sprite(sprTilePlaceHere, 0, objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize)
+                    draw_sprite_ext(sprArrow, 0, objHouse.x+xx*global.tileSize+16, objHouse.y+yy*global.tileSize+16,1,1,arrowRotation,c_white,1)
                 }
             }
         }
@@ -148,13 +154,20 @@ else if state == PlantState_Draw {
         for (var xo=-1; xo&lt;=1; xo+=1) {
             for (var yo=-1; yo&lt;=1; yo+=1) {
                 if abs(xo) == abs(yo) continue
+                
+                if xo=1 arrowRotation = 0
+                if yo=-1 arrowRotation = 90
+                if xo=-1 arrowRotation = 180
+                if yo=1 arrowRotation = 270
+                
                 var xx = lastX+xo
                 var yy = lastY+yo
+                
                 if xx&lt;0 or xx&gt;=w or yy&lt;0 or yy&gt;=h continue
                 //scrDrawRectSize(objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize,
                 //global.tileSize, global.tileSize, true)
                 if scrTileIsValidPath(xx, yy) {
-                    draw_sprite(sprTilePlaceHere, 0, objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize)
+                    draw_sprite_ext(sprArrow, 0, objHouse.x+xx*global.tileSize+16, objHouse.y+yy*global.tileSize+16,1,1,arrowRotation,c_white,1)
                 }
             }
         }
