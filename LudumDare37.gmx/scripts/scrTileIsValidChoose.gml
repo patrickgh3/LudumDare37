@@ -8,6 +8,7 @@ or objPlanter.objectGrid[# scrTileX, scrTileY] != noone {
 
 with objVineBase {
     if doneGrowing continue
+    if bulbObj.growing continue
     
     var xoCheck = scrTileX-tileX
     var yoCheck = scrTileY-tileY

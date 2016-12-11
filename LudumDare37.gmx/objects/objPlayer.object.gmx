@@ -277,7 +277,8 @@ var foundCloseVine = false
 with objVineBase {
     if point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 50
     and ds_list_size(segmentList) &gt; 1
-    and objPlanter.state == PlantState_Choose {
+    and objPlanter.state == PlantState_Choose
+    and not bulbObj.growing {
         destroyVisible = true
         if not foundCloseVine and keyboard_check_pressed(ord('X')) {
             for (var i=0; i&lt;ds_list_size(segmentList); i+=1) {

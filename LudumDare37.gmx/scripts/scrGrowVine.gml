@@ -3,6 +3,14 @@ with objPlanter {
     var startY = pathListY[| 0]
     var vineBase = objectGrid[# startX, startY]
     
+    var path = path_add()
+    path_set_kind(path, 1) // smoothed path
+    path_add_point(path, vineBase.bulbObj.x, vineBase.bulbObj.y, 100)
+    path_set_closed(path, false)
+    
+    var xOnPath = vineBase.bulbObj.x
+    var yOnPath = vineBase.bulbObj.y
+    
     for (var i=1; i<ds_list_size(pathListY); i+=1) {
         var x1 = pathListX[| i-1]
         var y1 = pathListY[| i-1]
@@ -13,13 +21,12 @@ with objPlanter {
         
         with vineBase.bulbObj {
             visible=1
-            var seg = instance_create(x, y, objVineSegment);
-            x += dx*global.tileSize
-            y += dy*global.tileSize
-            if dx == 1 image_angle = 0
-            if dx == -1 image_angle = 180
-            if dy == 1 image_angle = 270
-            if dy == -1 image_angle = 90
+            var seg = instance_create(xOnPath, yOnPath, objVineSegment);
+            seg.visible = false
+            xOnPath += dx*global.tileSize
+            yOnPath += dy*global.tileSize
+            path_add_point(path, xOnPath, yOnPath, 100)
+            ds_list_add(growSegments, seg)
         }
         
         with vineBase {
@@ -46,6 +53,13 @@ with objPlanter {
             lastDx = dx
             lastDy = dy
         }
+    }
+    
+    with vineBase.bulbObj {
+        self.path = path
+        path_start(path, 1, path_action_stop, false)
+        growing = true
+        growT = 0
     }
     
     with vineBase {
