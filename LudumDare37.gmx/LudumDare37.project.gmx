@@ -110,6 +110,8 @@
     <sprite>sprites\sprShine1</sprite>
     <sprite>sprites\sprWetplace</sprite>
     <sprite>sprites\sprLilypad</sprite>
+    <sprite>sprites\sprFenceH</sprite>
+    <sprite>sprites\sprFenceV</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
