@@ -287,6 +287,7 @@ with objVineBase {
     and point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 50
     and ds_list_size(segmentList) &gt; 1
     and objPlanter.state == PlantState_Choose
+    and instance_exists(bulbObj)
     and not bulbObj.growing {
         destroyVisible = true
         if not foundCloseVine and keyboard_check_pressed(ord('X')) {

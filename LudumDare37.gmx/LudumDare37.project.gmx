@@ -27,6 +27,8 @@
       <sprite>sprites\sprEditorSquare32</sprite>
       <sprite>sprites\sprEditorSquare32B</sprite>
       <sprite>sprites\sprEditorP</sprite>
+      <sprite>sprites\sprEditorSplashPoint1</sprite>
+      <sprite>sprites\sprEditorSplashPoint2</sprite>
     </sprites>
     <sprites name="player">
       <sprite>sprites\sprPlayerFront</sprite>
@@ -136,7 +138,6 @@
     <script>scripts\scrClearPath.gml</script>
     <script>scripts\scrVineToSpikeSprite.gml</script>
   </scripts>
-  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\objPlayer</object>
     <object>objects\objHouse</object>
@@ -163,6 +164,9 @@
     <object>objects\objPondShine</object>
     <object>objects\objSplashDrop</object>
     <object>objects\objSplashSpawner</object>
+    <object>objects\objDirtSplash</object>
+    <object>objects\objSplashPoint1</object>
+    <object>objects\objSplashPoint2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>

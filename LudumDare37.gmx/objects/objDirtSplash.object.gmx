@@ -25,18 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>groupIndex = 0
-active = false
-t = 0
-
-transitionLength = 260
-dAlpha = 1/180
+            <string>alarm[0] = irandom_range(20, 40)
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -53,71 +48,15 @@ dAlpha = 1/180
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.debugMode {
-    if not active and keyboard_check_pressed(ord('U')) and (groupIndex==0 or groupIndex==1) {
-        event_user(0)
-        //with objStartSeedbag instance_destroy()
-    }
-}
+            <string>alarm[0] = irandom_range(4, 8)
 
-if active {
-    t += 1
-    var layer;
-    if groupIndex==1 layer = 95
-    if groupIndex==2 layer = 94
-    
-    var tiles = tile_get_ids_at_depth(layer)
-    for (var i=0; i&lt;array_length_1d(tiles); i+=1) {
-        var tile = tiles[i]
-        tile_set_alpha(tile, tile_get_alpha(tile)-dAlpha)
-    }
-    
-    if t == transitionLength {
-        active = false
-        with objUnfertileGround {
-            if group == other.groupIndex {
-                instance_destroy()
-            }
-        }
-        with objDirtSplash instance_destroy()
-        objPlanter.state = PlantState_Plant
-    }
-}
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>groupIndex += 1
-active = true
-t = 0
-//objPlanter.state = PlantState_Destroy
-
-var pointObj = objSplashPoint1
-if groupIndex == 2 pointObj = objSplashPoint2
-
-with pointObj {
-    instance_destroy()
-    instance_create(x+16, y+16, objDirtSplash)
+with instance_create(x+random_range(-16,16), y+random_range(-16,16), objSplashDrop) {
+    direction = 90+choose(1,-1)*random_range(30,30)
+    speed = 0.8
+    gravity = 0.06
+    dAlpha = -1/40
+    image_xscale = random_range(0.5, 1)
+    image_yscale = image_xscale
 }
 </string>
           </argument>
