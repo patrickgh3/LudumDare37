@@ -29,7 +29,7 @@
 
 image_speed = 0.01+random(0.03)
 sparkleTimer = 0
-
+/*
 var numShine = 5
 for (var i=0; i&lt;numShine; i+=1) {
     var v = i/(numShine-1)*2-1
@@ -43,7 +43,17 @@ for (var i=0; i&lt;numShine; i+=1) {
         image_yscale = scale
         animT = 0
     }
-}
+}*/
+    with instance_create(x+47, y+45, objPondShine) {
+        image_alpha = 0.9
+        animT = 0
+        }
+    with instance_create(x+47, y+45, objPondShine) {
+        image_alpha = 0.15
+        image_angle = 180
+        animT = 60
+        }
+
 </string>
           </argument>
         </arguments>
