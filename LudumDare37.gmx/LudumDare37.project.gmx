@@ -48,13 +48,21 @@
       <sprite>sprites\sprVineR2U</sprite>
       <sprite>sprites\sprSpikeR2U</sprite>
       <sprite>sprites\sprLeafUp</sprite>
+      <sprite>sprites\sprSpikeLeafUp</sprite>
       <sprite>sprites\sprLeafDown</sprite>
+      <sprite>sprites\sprSpikeLeafDown</sprite>
       <sprite>sprites\sprLeafLeft</sprite>
+      <sprite>sprites\sprSpikeLeafLeft</sprite>
       <sprite>sprites\sprLeafRight</sprite>
+      <sprite>sprites\sprSpikeLeafRight</sprite>
       <sprite>sprites\sprLeafL2D</sprite>
       <sprite>sprites\sprLeafR2D</sprite>
+      <sprite>sprites\sprSpikeLeafL2D</sprite>
+      <sprite>sprites\sprSpikeLeafR2D</sprite>
       <sprite>sprites\sprLeafL2U</sprite>
       <sprite>sprites\sprLeafR2U</sprite>
+      <sprite>sprites\sprSpikeLeafL2U</sprite>
+      <sprite>sprites\sprSpikeLeafR2U</sprite>
       <sprite>sprites\sprVineStartL</sprite>
       <sprite>sprites\sprSpikeStartL</sprite>
       <sprite>sprites\sprVineStartR</sprite>
@@ -92,6 +100,7 @@
     <sprite>sprites\sprArrow</sprite>
     <sprite>sprites\sprSparkle</sprite>
     <sprite>sprites\sprGoat</sprite>
+    <sprite>sprites\sprCrash</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
@@ -143,6 +152,7 @@
     <object>objects\objSparkle</object>
     <object>objects\objWall</object>
     <object>objects\objGoat</object>
+    <object>objects\objCrash</object>
     <object>objects\objFx</object>
     <object>objects\objStartSeedbag</object>
     <object>objects\objTillTransition</object>
