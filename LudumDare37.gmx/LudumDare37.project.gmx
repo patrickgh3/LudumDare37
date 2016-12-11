@@ -83,6 +83,7 @@
     <sprite>sprites\sprSeedbag</sprite>
     <sprite>sprites\sprArrow</sprite>
     <sprite>sprites\sprSparkle</sprite>
+    <sprite>sprites\sprGoat</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
@@ -132,6 +133,7 @@
     <object>objects\objPond</object>
     <object>objects\objUnfertileGround</object>
     <object>objects\objSparkle</object>
+    <object>objects\objGoat</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
