@@ -47,13 +47,21 @@
       <sprite>sprites\sprVineR2U</sprite>
       <sprite>sprites\sprSpikeR2U</sprite>
       <sprite>sprites\sprLeafUp</sprite>
+      <sprite>sprites\sprSpikeLeafUp</sprite>
       <sprite>sprites\sprLeafDown</sprite>
+      <sprite>sprites\sprSpikeLeafDown</sprite>
       <sprite>sprites\sprLeafLeft</sprite>
+      <sprite>sprites\sprSpikeLeafLeft</sprite>
       <sprite>sprites\sprLeafRight</sprite>
+      <sprite>sprites\sprSpikeLeafRight</sprite>
       <sprite>sprites\sprLeafL2D</sprite>
       <sprite>sprites\sprLeafR2D</sprite>
+      <sprite>sprites\sprSpikeLeafL2D</sprite>
+      <sprite>sprites\sprSpikeLeafR2D</sprite>
       <sprite>sprites\sprLeafL2U</sprite>
       <sprite>sprites\sprLeafR2U</sprite>
+      <sprite>sprites\sprSpikeLeafL2U</sprite>
+      <sprite>sprites\sprSpikeLeafR2U</sprite>
       <sprite>sprites\sprVineStartL</sprite>
       <sprite>sprites\sprSpikeStartL</sprite>
       <sprite>sprites\sprVineStartR</sprite>
@@ -143,11 +151,8 @@
     <object>objects\objSparkle</object>
     <object>objects\objWall</object>
     <object>objects\objGoat</object>
-<<<<<<< HEAD
     <object>objects\objCrash</object>
-=======
     <object>objects\objFx</object>
->>>>>>> 14795fe21c790a0b9c8e01ecb4415f6ded4b9dad
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
