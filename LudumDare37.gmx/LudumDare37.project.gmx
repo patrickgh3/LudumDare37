@@ -103,7 +103,9 @@
     <sprite>sprites\sprSeedbag</sprite>
     <sprite>sprites\sprArrow</sprite>
     <sprite>sprites\sprSparkle</sprite>
-    <sprite>sprites\sprGoat</sprite>
+    <sprite>sprites\sprGoatWalking</sprite>
+    <sprite>sprites\sprGoatIdle</sprite>
+    <sprite>sprites\sprGoatEating</sprite>
     <sprite>sprites\sprCrash</sprite>
     <sprite>sprites\sprShine1</sprite>
     <sprite>sprites\sprWetplace</sprite>
