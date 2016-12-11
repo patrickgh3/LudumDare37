@@ -50,7 +50,7 @@ with objPlanter {
     
                 if hasLeaf = 1
                 {
-                if seg.sprite_index != sprVineCross && seg.sprite_index != sprVineL2D && seg.sprite_index != sprVineL2U && seg.sprite_index != sprVineR2D && seg.sprite_index != sprVineR2U 
+                if seg.sprite_index != sprVineCross
                 {
                 leafObject = instance_create(seg.x,seg.y,objLeaf);
                 leafObject.parent = seg.id;
@@ -60,6 +60,10 @@ with objPlanter {
                 else if (seg.sprite_index = sprVineLoopR) leafObject.sprite_index = choose(sprLeafRight,sprLeafUp,sprLeafDown);
                 else if (seg.sprite_index = sprVineLoopD) leafObject.sprite_index = choose(sprLeafRight,sprLeafUp,sprLeafLeft);
                 else if (seg.sprite_index = sprVineLoopU) leafObject.sprite_index = choose(sprLeafRight,sprLeafLeft,sprLeafDown);
+                else if (seg.sprite_index = sprVineL2D) leafObject.sprite_index = sprLeafL2D;
+                else if (seg.sprite_index = sprVineR2D) leafObject.sprite_index = sprLeafR2D;
+                else if (seg.sprite_index = sprVineL2U) leafObject.sprite_index = sprLeafL2U;
+                else if (seg.sprite_index = sprVineR2U) leafObject.sprite_index = sprLeafR2U;
                 }
                 }
                 

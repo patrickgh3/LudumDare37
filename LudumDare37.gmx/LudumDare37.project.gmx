@@ -50,6 +50,10 @@
       <sprite>sprites\sprLeafDown</sprite>
       <sprite>sprites\sprLeafLeft</sprite>
       <sprite>sprites\sprLeafRight</sprite>
+      <sprite>sprites\sprLeafL2D</sprite>
+      <sprite>sprites\sprLeafR2D</sprite>
+      <sprite>sprites\sprLeafL2U</sprite>
+      <sprite>sprites\sprLeafR2U</sprite>
       <sprite>sprites\sprVineStartL</sprite>
       <sprite>sprites\sprSpikeStartL</sprite>
       <sprite>sprites\sprVineStartR</sprite>

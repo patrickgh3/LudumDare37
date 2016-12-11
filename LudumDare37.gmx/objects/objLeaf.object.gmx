@@ -29,7 +29,7 @@
 image_xscale = 0
 image_yscale = 0
 
-alarm[0] = 80 + random(100)
+alarm[0] = 20+random(60)
 </string>
           </argument>
         </arguments>
