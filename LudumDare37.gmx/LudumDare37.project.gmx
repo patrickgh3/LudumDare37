@@ -97,6 +97,7 @@
     <sprite>sprites\sprWell</sprite>
     <sprite>sprites\sprWateringCan</sprite>
     <sprite>sprites\sprWater</sprite>
+    <sprite>sprites\sprWaterDrop</sprite>
     <sprite>sprites\sprKeyZ</sprite>
     <sprite>sprites\sprKeyX</sprite>
     <sprite>sprites\sprSeedbag</sprite>
@@ -106,6 +107,7 @@
     <sprite>sprites\sprCrash</sprite>
     <sprite>sprites\sprShine1</sprite>
     <sprite>sprites\sprWetplace</sprite>
+    <sprite>sprites\sprLilypad</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
@@ -167,6 +169,7 @@
     <object>objects\objDirtSplash</object>
     <object>objects\objSplashPoint1</object>
     <object>objects\objSplashPoint2</object>
+    <object>objects\objLilypad</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
