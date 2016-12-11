@@ -25,6 +25,24 @@ with objPlanter {
         with vineBase {
             ds_list_add(segmentList, seg)
             seg.sprite_index = scrVineSpriteTwoEdges(lastDx, lastDy, dx, dy)
+            
+            hasLeaf = choose(0,1);
+
+            if hasLeaf = 1
+            {
+            if seg.sprite_index != sprVineCross && seg.sprite_index != sprVineL2D && seg.sprite_index != sprVineL2U && seg.sprite_index != sprVineR2D && seg.sprite_index != sprVineR2U 
+            {
+            leafObject = instance_create(seg.x,seg.y,objLeaf);
+            leafObject.parent = seg.id;
+            if (seg.sprite_index = sprVineH) || (seg.sprite_index = sprVineStartU) || (seg.sprite_index = sprVineStartD) leafObject.sprite_index = choose(sprLeafUp,sprLeafDown);
+            else if (seg.sprite_index = sprVineV) || (seg.sprite_index = sprVineStartL) || (seg.sprite_index = sprVineStartR) leafObject.sprite_index = choose(sprLeafLeft,sprLeafRight);
+            else if (seg.sprite_index = sprVineLoopL) leafObject.sprite_index = choose(sprLeafLeft,sprLeafUp,sprLeafDown);
+            else if (seg.sprite_index = sprVineLoopR) leafObject.sprite_index = choose(sprLeafRight,sprLeafUp,sprLeafDown);
+            else if (seg.sprite_index = sprVineLoopD) leafObject.sprite_index = choose(sprLeafRight,sprLeafUp,sprLeafLeft);
+            else if (seg.sprite_index = sprVineLoopU) leafObject.sprite_index = choose(sprLeafRight,sprLeafLeft,sprLeafDown);
+            }
+            }
+            
             lastDx = dx
             lastDy = dy
         }

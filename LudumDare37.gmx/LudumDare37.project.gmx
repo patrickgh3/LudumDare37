@@ -78,6 +78,8 @@
     <sprite>sprites\sprWell</sprite>
     <sprite>sprites\sprWateringCan</sprite>
     <sprite>sprites\sprWater</sprite>
+    <sprite>sprites\sprKeyZ</sprite>
+    <sprite>sprites\sprKeyX</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
@@ -121,6 +123,7 @@
       <object>objects\objVineBase</object>
       <object>objects\objBulb</object>
       <object>objects\objVineSegment</object>
+      <object>objects\objLeaf</object>
     </objects>
     <object>objects\objPond</object>
     <object>objects\objUnfertileGround</object>
