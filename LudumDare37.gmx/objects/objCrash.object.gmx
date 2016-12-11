@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>scale = random(0.8)
-image_xscale = 1 + scale
-image_yscale = 1 + scale
+image_xscale = 1.2 + scale
+image_yscale = 1.2 + scale
 image_angle = irandom(360)
 image_speed = 0
 image_index = 0
@@ -54,10 +54,10 @@ step = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if step mod 3 = 0
+            <string>if step mod 2 = 0
 {
 step = 0
-if image_index&lt;3 image_index+=1
+if image_index&lt;4 image_index+=1
 else instance_destroy();
 }
 step+=1
