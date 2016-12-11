@@ -324,6 +324,7 @@ with objVineBase {
             <kind>1</kind>
             <string>with other instance_destroy()
 audio_play_sound(sndPlop, 0, false)
+global.seedsInventory += 1
 objPlanter.state = PlantState_Plant
 </string>
           </argument>

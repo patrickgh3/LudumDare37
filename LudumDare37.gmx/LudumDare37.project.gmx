@@ -170,6 +170,7 @@
     <object>objects\objSplashPoint1</object>
     <object>objects\objSplashPoint2</object>
     <object>objects\objLilypad</object>
+    <object>objects\objSeedbag2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
