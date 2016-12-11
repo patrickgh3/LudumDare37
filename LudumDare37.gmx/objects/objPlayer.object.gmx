@@ -44,6 +44,8 @@ uiAnimT = 0
 
 image_speed = 0
 CanDisplay = 0
+
+stepT = 0
 </string>
           </argument>
         </arguments>
@@ -120,12 +122,20 @@ while y + halfHeight - 1 &gt; objHouse.bbox_bottom {
     y -= 1
 }
 
+if stepT &gt; 0 stepT -= 1
+
 if x != xLast or y != yLast {
     // coming out of standstill
     if image_speed == 0 {
         image_index = 1
     }
     image_speed = 1/10
+    
+    if stepT == 0 {
+        var s = audio_play_sound(sndStep1, 0, false)
+        audio_sound_pitch(s, random_range(0.85, 1.15))
+        stepT = irandom_range(20, 27)
+    }
 }
 else {
     image_speed = 0
@@ -234,6 +244,7 @@ if objPlanter.state == PlantState_Draw {
         objCancelDraw.image_index = 1
         if keyboard_check_pressed(ord('Z')) {
             scrClearPath()
+            audio_play_sound(sndCancelBoop, 0, false)
         }
     }
     else with objCancelDraw image_index = 0

@@ -9,6 +9,8 @@
     <sound>sound\sndPlop</sound>
     <sound>sound\sndDig</sound>
     <sound>sound\sndGrow</sound>
+    <sound>sound\sndStep1</sound>
+    <sound>sound\sndCancelBoop</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="placeholder">
