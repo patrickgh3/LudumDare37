@@ -343,38 +343,7 @@ objPlanter.state = PlantState_Plant
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Draw square highlight
-if placeable {
-    var rectOff = 0
-    var arrowOff = 0
-    if floor(uiAnimT/20) mod 2 != 0 {
-        rectOff = 1
-        arrowOff = 1
-    }
-    
-    draw_set_color(c_white)
-    draw_rectangle(tileXWorld-rectOff, tileYWorld-rectOff,
-        tileXWorld+global.tileSize-1+rectOff, tileYWorld+global.tileSize-1+rectOff, true)
-    draw_sprite(sprArrowDown, 0, tileXWorld+global.tileSize/2, tileYWorld+4-arrowOff)
-    if global.tutorialState=0
-    {
-        draw_sprite(sprKeyZ,0,x,y-60);
-    }
-}
-else if not ableToCancel {
-    draw_sprite_ext(sprNoSelectSquare, 0, tileXWorld, tileYWorld, 1, 1, 0, c_white, 1)
-}
-
-// Draw num seeds
-
-/*
-draw_set_color(c_white)
-draw_set_halign(fa_left)
-draw_set_valign(fa_top)
-draw_text(x-10, y-38, 'x'+string(numSeeds))
-*/
-if CanDisplay = 1 draw_sprite(sprWateringCan,abs(numSeeds-4),x,y-53)
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -396,11 +365,47 @@ if CanDisplay = 1 draw_sprite(sprWateringCan,abs(numSeeds-4),x,y-53)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index, image_index, x, y-12, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+            <string>// Draw square highlight
+if placeable {
+    var rectOff = 0
+    var arrowOff = 0
+    if floor(uiAnimT/20) mod 2 != 0 {
+        rectOff = 1
+        arrowOff = 1
+    }
+    
+    draw_set_color(c_white)
+    draw_rectangle(tileXWorld-rectOff, tileYWorld-rectOff,
+        tileXWorld+global.tileSize-1+rectOff, tileYWorld+global.tileSize-1+rectOff, true)
+    draw_sprite(sprArrowDown, 0, tileXWorld+global.tileSize/2, tileYWorld+4-arrowOff)
+    if global.tutorialState=0
+    {
+        draw_sprite(sprKeyZ,0,x,y-60);
+    }
+}
+else if not ableToCancel {
+    //draw_sprite_ext(sprNoSelectSquare, 0, tileXWorld, tileYWorld, 1, 1, 0, c_white, 1)
+}
+
+// Draw num seeds
+
+/*
+draw_set_color(c_white)
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
+draw_text(x-10, y-38, 'x'+string(numSeeds))
+*/
+
+
+
+
+draw_sprite_ext(sprite_index, image_index, x, y-12, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 
 if objPlanter.state == PlantState_Plant {
     draw_sprite_ext(sprBulb, 0, x, y-38, 1, 1, 90, c_white, 1)
 }
+
+if CanDisplay = 1 draw_sprite(sprWateringCan,abs(numSeeds-4),x,y-53)
 </string>
           </argument>
         </arguments>

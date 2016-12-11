@@ -3,7 +3,7 @@
   <spriteName>sprEditorP</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -114,7 +114,7 @@ ds_list_destroy(pathListY)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if state == PlantState_Plant {
+            <string>/*if state == PlantState_Plant {
     // Draw potential vine planting positions
     for (var xx=0; xx&lt;w; xx+=1) {
         for (var yy=0; yy&lt;h; yy+=1) {
@@ -123,8 +123,8 @@ ds_list_destroy(pathListY)
             }
         }
     }
-}
-else if state == PlantState_Choose {
+}*/
+if state == PlantState_Choose {
     // Draw potential vine choice positions
     with objVineBase {
         for (var xo=-1; xo&lt;=1; xo+=1) {
