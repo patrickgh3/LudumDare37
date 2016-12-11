@@ -143,10 +143,8 @@
     <instance objName="objSplashPoint2" x="736" y="736" name="inst_D879759A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSplashPoint2" x="800" y="576" name="inst_11606A54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSplashPoint2" x="832" y="576" name="inst_32FAA68A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoat" x="672" y="992" name="inst_DEBA3471" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoat" x="1024" y="672" name="inst_9D25C803" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoat" x="864" y="1088" name="inst_2864DBBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSeedbag2" x="928" y="960" name="inst_964B5698" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGoat" x="992" y="1056" name="inst_2864DBBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSeedbag2" x="800" y="1216" name="inst_964B5698" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="544" y="896" name="inst_1D435DF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="448" y="896" name="inst_E3C9A7FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="288" y="768" name="inst_A9D771ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -177,6 +175,20 @@
     <instance objName="objWall" x="544" y="512" name="inst_C82845D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="928" y="512" name="inst_D48F2D29" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="864" y="768" name="inst_EBBFBCA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGoatFence" x="768" y="1168" name="inst_D0F52BA1" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGoat" x="608" y="1056" name="inst_BBF5D5F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWall" x="640" y="1152" name="inst_F06BBAB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWall" x="672" y="1152" name="inst_05D61895" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWall" x="704" y="1152" name="inst_82D5A405" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWall" x="832" y="1152" name="inst_321BFB13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWall" x="800" y="1152" name="inst_8BB94BD5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWall" x="864" y="1152" name="inst_4D0C71B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWall" x="896" y="1152" name="inst_36C427CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWall" x="800" y="1184" name="inst_C9D25CF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWall" x="704" y="1216" name="inst_A7815B44" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWall" x="736" y="1216" name="inst_DF624604" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGoat" x="768" y="976" name="inst_56BCB150" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGoat" x="1088" y="928" name="inst_9205C62C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bgDirt" x="736" y="576" w="32" h="32" xo="0" yo="0" id="10000969" name="inst_A1F57203" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -243,17 +255,6 @@
     <tile bgName="bgRockSmall" x="736" y="288" w="32" h="32" xo="0" yo="0" id="10001324" name="inst_98ABE08C" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRockSmall" x="864" y="768" w="32" h="32" xo="0" yo="0" id="10001326" name="inst_0614A021" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRockSmall" x="544" y="512" w="32" h="32" xo="0" yo="0" id="10001370" name="inst_24530F99" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgFence" x="896" y="928" w="32" h="32" xo="0" yo="0" id="10001394" name="inst_3235A288" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgFence" x="896" y="960" w="32" h="32" xo="0" yo="0" id="10001395" name="inst_D6E33B00" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgFence" x="896" y="992" w="32" h="32" xo="0" yo="0" id="10001396" name="inst_0E6EBB19" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgFence" x="928" y="992" w="32" h="32" xo="0" yo="0" id="10001397" name="inst_A1354842" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgFence" x="960" y="992" w="32" h="32" xo="0" yo="0" id="10001398" name="inst_8401AE0A" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgFence" x="960" y="960" w="32" h="32" xo="0" yo="0" id="10001399" name="inst_0B7C1D7D" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgFence" x="960" y="928" w="32" h="32" xo="0" yo="0" id="10001400" name="inst_E7EA4BD0" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgFence" x="960" y="896" w="32" h="32" xo="0" yo="0" id="10001401" name="inst_2DA629DE" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgFence" x="960" y="864" w="32" h="32" xo="0" yo="0" id="10001404" name="inst_DFBFD3BB" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgFence" x="928" y="864" w="32" h="32" xo="0" yo="0" id="10001405" name="inst_7C1EDC41" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgFence" x="896" y="864" w="32" h="32" xo="0" yo="0" id="10001406" name="inst_F8577E43" depth="110" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgDirt" x="768" y="832" w="32" h="32" xo="0" yo="0" id="10000938" name="inst_72B49E38" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgDirt" x="736" y="832" w="32" h="32" xo="0" yo="0" id="10000939" name="inst_7FF5029D" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgDirt" x="800" y="832" w="32" h="32" xo="0" yo="0" id="10000940" name="inst_16013EC0" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -313,6 +314,16 @@
     <tile bgName="bgTiles" x="688" y="736" w="64" h="64" xo="0" yo="0" id="10001053" name="inst_CD86B5D3" depth="90" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgTiles" x="688" y="672" w="64" h="64" xo="0" yo="0" id="10001054" name="inst_013A19C2" depth="90" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgTiles" x="688" y="608" w="64" h="64" xo="0" yo="0" id="10001055" name="inst_DC42A5D9" depth="90" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgFence" x="704" y="1152" w="32" h="32" xo="0" yo="0" id="10001418" name="inst_A959C25E" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgFence" x="800" y="1152" w="32" h="32" xo="0" yo="0" id="10001429" name="inst_9883C99D" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgFence" x="832" y="1152" w="32" h="32" xo="0" yo="0" id="10001430" name="inst_460F9B68" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgFence" x="864" y="1152" w="32" h="32" xo="0" yo="0" id="10001431" name="inst_0E9541FB" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgFence" x="800" y="1184" w="32" h="32" xo="0" yo="0" id="10001432" name="inst_A068E4C4" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgFence" x="736" y="1216" w="32" h="32" xo="0" yo="0" id="10001433" name="inst_65DE2115" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgFence" x="672" y="1152" w="32" h="32" xo="0" yo="0" id="10001434" name="inst_CC071041" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgFence" x="640" y="1152" w="32" h="32" xo="0" yo="0" id="10001435" name="inst_82B9D229" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgFence" x="896" y="1152" w="32" h="32" xo="0" yo="0" id="10001436" name="inst_548935D3" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgFence" x="704" y="1216" w="32" h="32" xo="0" yo="0" id="10001437" name="inst_9DB82BED" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgGlassHorizontal" x="576" y="550" w="352" h="32" xo="0" yo="0" id="10000901" name="inst_3AFD6388" depth="-100" locked="0" colour="4294967295" scaleX="0.818000018596649" scaleY="0.818000018596649"/>
     <tile bgName="bgTopGlass" x="576" y="576" w="352" h="96" xo="0" yo="0" id="10000908" name="inst_FC5D8F85" depth="-100" locked="0" colour="4294967295" scaleX="0.818000018596649" scaleY="0.818000018596649"/>
     <tile bgName="bgGlassHorizontalBottom" x="576" y="812" w="352" h="64" xo="0" yo="0" id="10000923" name="inst_BF25FA2A" depth="-100" locked="0" colour="4294967295" scaleX="0.818000018596649" scaleY="0.818000018596649"/>
