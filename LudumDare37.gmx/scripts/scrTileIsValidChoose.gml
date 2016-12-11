@@ -8,6 +8,7 @@ or objPlanter.objectGrid[# scrTileX, scrTileY] != noone {
 
 with objVineBase {
     if doneGrowing continue
+    if not instance_exists(bulbObj) continue
     if bulbObj.growing continue
     
     var xoCheck = scrTileX-tileX

@@ -141,6 +141,7 @@ if destroying {
                 var vineObj = bulbObj
                 destroyState = 4
                 destroyT = 0
+                bulbObj = noone
             }
             with vineObj {
                 var fx = instance_create(x, y, objFx);

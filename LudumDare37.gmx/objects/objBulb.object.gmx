@@ -201,6 +201,7 @@ if instance_exists(touchedPond) {
         instance_create(xx, yy, objSplashSpawner)
         audio_play_sound(sndSplash, 0, false)
     }
+    touchedPond = noone
     
     if objTillTransition.groupIndex == 0
     and global.pondDrained[1] and global.pondDrained[2] {
