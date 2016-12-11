@@ -161,6 +161,7 @@ ds_list_clear(growSegments)
 
 x = floor(x/global.tileSize)*global.tileSize + global.tileSize/2
 y = floor(y/global.tileSize)*global.tileSize + global.tileSize/2
+image_angle = round(image_angle/90)*90
 </string>
           </argument>
         </arguments>

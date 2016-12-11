@@ -24,6 +24,7 @@
     </sprites>
     <sprites name="editor">
       <sprite>sprites\sprEditorSquare32</sprite>
+      <sprite>sprites\sprEditorSquare32B</sprite>
       <sprite>sprites\sprEditorP</sprite>
     </sprites>
     <sprites name="player">
@@ -153,6 +154,8 @@
     <object>objects\objGoat</object>
     <object>objects\objCrash</object>
     <object>objects\objFx</object>
+    <object>objects\objStartSeedbag</object>
+    <object>objects\objTillTransition</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
