@@ -8,6 +8,7 @@
     <sound>sound\sndWatering</sound>
     <sound>sound\sndPlop</sound>
     <sound>sound\sndDig</sound>
+    <sound>sound\sndGrow</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="placeholder">
