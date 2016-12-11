@@ -35,6 +35,8 @@ yLast = y
 growSegments = ds_list_create()
 
 fractionToStopAt = 1
+
+touchedPond = noone
 </string>
           </argument>
         </arguments>
@@ -137,6 +139,31 @@ yLast = y
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="objPond">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if not other.drained {
+    touchedPond = other.id
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
@@ -162,6 +189,10 @@ ds_list_clear(growSegments)
 x = floor(x/global.tileSize)*global.tileSize + global.tileSize/2
 y = floor(y/global.tileSize)*global.tileSize + global.tileSize/2
 image_angle = round(image_angle/90)*90
+
+if instance_exists(touchedPond) {
+    touchedPond.drained = true
+}
 </string>
           </argument>
         </arguments>
