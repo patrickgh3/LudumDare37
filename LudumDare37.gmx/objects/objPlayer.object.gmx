@@ -199,8 +199,11 @@ else if objPlanter.state == PlantState_Choose {
         // Create cancel object
         var cancelTileX = 4
         var cancelTileY = 4
-        var topleft = (y-objHouse.x) &lt; -(x-objHouse.x) + (objHouse.bbox_left+objHouse.bbox_right)/2
-        var botleft = (y-objHouse.x) &gt; (x-objHouse.x)
+        var xx = x-objHouse.x
+        var yy = y-objHouse.y
+        var size = objPlanter.h*global.tileSize
+        var topleft = yy &lt; -xx + size
+        var botleft = yy &gt; xx
         var offset = 2
         if topleft and botleft {
             cancelTileX +=offset
@@ -326,28 +329,6 @@ objPlanter.state = PlantState_Plant
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="73">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -395,6 +376,7 @@ draw_set_halign(fa_left)
 draw_set_valign(fa_top)
 draw_text(x-10, y-38, 'x'+string(numSeeds))
 */
+
 
 
 

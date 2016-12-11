@@ -44,15 +44,17 @@ for (var i=0; i&lt;numShine; i+=1) {
         animT = 0
     }
 }*/
-    with instance_create(x+47, y+45, objPondShine) {
-        image_alpha = 0.9
-        animT = 0
-        }
-    with instance_create(x+47, y+45, objPondShine) {
-        image_alpha = 0.15
-        image_angle = 180
-        animT = 60
-        }
+shine1 = instance_create(x+47, y+45, objPondShine)
+with shine1 {
+    image_alpha = 0.9
+    animT = 0
+}
+shine2 = instance_create(x+47, y+45, objPondShine)
+with shine2 {
+    image_alpha = 0.15
+    image_angle = 180
+    animT = 60
+}
 
 </string>
           </argument>
