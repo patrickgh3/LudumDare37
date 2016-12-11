@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>isGrowing = 0
+            <string>spiky = 0
+parent = 0
+isGrowing = 0
 image_xscale = 0
 image_yscale = 0
 
@@ -84,6 +86,12 @@ alarm[0] = 20+random(60)
         }
     else isGrowing = 0
     }
+    
+if spiky = 0 &amp;&amp; (parent.sprite_index=sprSpikeH || parent.sprite_index=sprSpikeV || parent.sprite_index=sprSpikeL2D || parent.sprite_index=sprSpikeR2D || parent.sprite_index=sprSpikeL2U || parent.sprite_index=sprSpikeR2U || parent.sprite_index=sprSpikeStartL || parent.sprite_index=sprSpikeStartR || parent.sprite_index=sprSpikeStartD || parent.sprite_index=sprSpikeStartU || parent.sprite_index=sprSpikeLoopL || parent.sprite_index=sprSpikeLoopR || parent.sprite_index=sprSpikeLoopU || parent.sprite_index=sprSpikeLoopD)
+{
+spiky = 1
+sprite_index = scrVineToSpikeSprite(sprite_index);
+}
 </string>
           </argument>
         </arguments>
