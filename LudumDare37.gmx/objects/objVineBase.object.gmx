@@ -161,7 +161,7 @@ if destroying {
     }
     else if destroyState == 4 {
         destroyT += 1
-        if destroyT == 50 {
+        if destroyT == 20 {
             instance_destroy()
             objPlanter.objectGrid[# tileX, tileY] = noone
             objPlanter.state = PlantState_Plant

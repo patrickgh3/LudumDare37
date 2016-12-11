@@ -42,7 +42,7 @@ pathAnimYOff = 0
 
 sprite_index = -1
 
-state = PlantState_Plant
+state = PlantState_Destroy
 </string>
           </argument>
         </arguments>
