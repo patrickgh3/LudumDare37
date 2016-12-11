@@ -22,6 +22,7 @@
       <sprite>sprites\sprPlaceholderSeeds</sprite>
       <sprite>sprites\sprPlaceholderVineBase</sprite>
       <sprite>sprites\sprPlaceholderX</sprite>
+      <sprite>sprites\sprite83</sprite>
     </sprites>
     <sprites name="editor">
       <sprite>sprites\sprEditorSquare32</sprite>
@@ -29,6 +30,7 @@
       <sprite>sprites\sprEditorP</sprite>
       <sprite>sprites\sprEditorSplashPoint1</sprite>
       <sprite>sprites\sprEditorSplashPoint2</sprite>
+      <sprite>sprites\sprite84</sprite>
     </sprites>
     <sprites name="player">
       <sprite>sprites\sprPlayerFront</sprite>
@@ -146,10 +148,10 @@
   </scripts>
   <objects name="objects">
     <object>objects\objPlayer</object>
-    <object>objects\objHouse</object>
-    <object>objects\objCamera</object>
-    <object>objects\objInit</object>
-    <object>objects\objCancelDraw</object>
+    <object>objects\objWall</object>
+    <object>objects\objGoat</object>
+    <object>objects\objGoatFence</object>
+    <object>objects\objSeedbag2</object>
     <objects name="plants">
       <object>objects\objPlanter</object>
       <object>objects\objSeed</object>
@@ -158,11 +160,13 @@
       <object>objects\objVineSegment</object>
       <object>objects\objLeaf</object>
     </objects>
+    <object>objects\objHouse</object>
+    <object>objects\objCamera</object>
+    <object>objects\objInit</object>
+    <object>objects\objCancelDraw</object>
     <object>objects\objPond</object>
     <object>objects\objUnfertileGround</object>
     <object>objects\objSparkle</object>
-    <object>objects\objWall</object>
-    <object>objects\objGoat</object>
     <object>objects\objCrash</object>
     <object>objects\objFx</object>
     <object>objects\objStartSeedbag</object>

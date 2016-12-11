@@ -112,12 +112,14 @@ if destroying {
             if spikeIndex &lt; ds_list_size(segmentList) {
                 with segmentList[| spikeIndex] {
                     sprite_index = scrVineToSpikeSprite(sprite_index)
+                    spiky = true
                 }
             }
             else {
                 with bulbObj sprite_index = sprBulbaspike
                 destroyState = 2
                 destroyT = 0
+                with bulbObj spiky = true
             }
             audio_play_sound(sndThorn1, 0, false)
             spikeIndex += 1
