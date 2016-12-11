@@ -30,24 +30,39 @@
     <sprites name="vine">
       <sprite>sprites\sprVineCross</sprite>
       <sprite>sprites\sprVineH</sprite>
+      <sprite>sprites\sprSpikeH</sprite>
       <sprite>sprites\sprVineV</sprite>
+      <sprite>sprites\sprSpikeV</sprite>
       <sprite>sprites\sprVineL2D</sprite>
+      <sprite>sprites\sprSpikeL2D</sprite>
       <sprite>sprites\sprVineR2D</sprite>
+      <sprite>sprites\sprSpikeR2D</sprite>
       <sprite>sprites\sprVineL2U</sprite>
+      <sprite>sprites\sprSpikeL2U</sprite>
       <sprite>sprites\sprVineR2U</sprite>
+      <sprite>sprites\sprSpikeR2U</sprite>
       <sprite>sprites\sprLeafUp</sprite>
       <sprite>sprites\sprLeafDown</sprite>
       <sprite>sprites\sprLeafLeft</sprite>
       <sprite>sprites\sprLeafRight</sprite>
       <sprite>sprites\sprVineStartL</sprite>
+      <sprite>sprites\sprSpikeStartL</sprite>
       <sprite>sprites\sprVineStartR</sprite>
+      <sprite>sprites\sprSpikeStartR</sprite>
       <sprite>sprites\sprVineStartU</sprite>
+      <sprite>sprites\sprSpikeStartU</sprite>
       <sprite>sprites\sprVineStartD</sprite>
+      <sprite>sprites\sprSpikeStartD</sprite>
       <sprite>sprites\sprBulb</sprite>
+      <sprite>sprites\sprBulbaspike</sprite>
       <sprite>sprites\sprVineLoopL</sprite>
+      <sprite>sprites\sprSpikeLoopL</sprite>
       <sprite>sprites\sprVineLoopR</sprite>
+      <sprite>sprites\sprSpikeLoopR</sprite>
       <sprite>sprites\sprVineLoopD</sprite>
+      <sprite>sprites\sprSpikeLoopD</sprite>
       <sprite>sprites\sprVineLoopU</sprite>
+      <sprite>sprites\sprSpikeLoopU</sprite>
     </sprites>
     <sprite>sprites\sprArrowDown</sprite>
     <sprite>sprites\sprNoSelectSquare</sprite>
@@ -88,6 +103,7 @@
     <script>scripts\scrVineSpriteTwoEdges.gml</script>
     <script>scripts\scrGrowVine.gml</script>
     <script>scripts\scrTileIsValidPath.gml</script>
+    <script>scripts\scrGrowVine.gml</script>
     <script>scripts\scrTileIsValidChoose.gml</script>
     <script>scripts\scrTileIsValidPlant.gml</script>
     <script>scripts\scrClearPath.gml</script>
