@@ -215,11 +215,15 @@ if destroying {
             <kind>1</kind>
             <string>//draw_sprite(sprMound,0,x-16,y-16)
 //draw_self()
-
+/*
 if destroyVisible {
     draw_set_halign(fa_center)
     draw_set_valign(fa_top)
     draw_text(x+16, y-50, 'X - Spikes')
+}*/
+if destroyVisible
+{
+    draw_sprite(sprKeyX,0,x,y-60);
 }
 </string>
           </argument>

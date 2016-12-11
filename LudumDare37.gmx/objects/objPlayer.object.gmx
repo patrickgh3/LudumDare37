@@ -183,6 +183,7 @@ if objPlanter.state == PlantState_Plant {
         objPlanter.objectGrid[# tileX, tileY] = vb
         objPlanter.state = PlantState_Choose
         audio_play_sound(sndPlop, 0, false)
+        if global.tutorialState=0 global.tutorialState=1
     }
 }
 else if objPlanter.state == PlantState_Choose {
@@ -330,6 +331,10 @@ if placeable {
     draw_rectangle(tileXWorld-rectOff, tileYWorld-rectOff,
         tileXWorld+global.tileSize-1+rectOff, tileYWorld+global.tileSize-1+rectOff, true)
     draw_sprite(sprArrowDown, 0, tileXWorld+global.tileSize/2, tileYWorld+4-arrowOff)
+    if global.tutorialState=0
+    {
+        draw_sprite(sprKeyZ,0,x,y-60);
+    }
 }
 else if not ableToCancel {
     draw_sprite_ext(sprNoSelectSquare, 0, tileXWorld, tileYWorld, 1, 1, 0, c_white, 1)
