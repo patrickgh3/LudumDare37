@@ -31,6 +31,8 @@ t = 0
 
 transitionLength = 260
 dAlpha = 1/180
+
+debugFastMode = false
 </string>
           </argument>
         </arguments>
@@ -55,8 +57,8 @@ dAlpha = 1/180
             <kind>1</kind>
             <string>if global.debugMode {
     if not active and keyboard_check_pressed(ord('U')) and (groupIndex==0 or groupIndex==1) {
+        debugFastMode = true
         event_user(0)
-        //with objStartSeedbag instance_destroy()
     }
 }
 
@@ -66,13 +68,20 @@ if active {
     if groupIndex==1 layer = 95
     if groupIndex==2 layer = 94
     
+    var da = dAlpha
+    var tl = transitionLength
+    if debugFastMode {
+        da = 1/20
+        tl = 50
+    }
+    
     var tiles = tile_get_ids_at_depth(layer)
     for (var i=0; i&lt;array_length_1d(tiles); i+=1) {
         var tile = tiles[i]
-        tile_set_alpha(tile, tile_get_alpha(tile)-dAlpha)
+        tile_set_alpha(tile, tile_get_alpha(tile)-da)
     }
     
-    if t == transitionLength {
+    if t == tl {
         active = false
         with objUnfertileGround {
             if group == other.groupIndex {
@@ -80,7 +89,13 @@ if active {
             }
         }
         with objDirtSplash instance_destroy()
-        objPlanter.state = PlantState_Plant
+        /*if global.seedsInventory &gt; 0 {
+            objPlanter.state = PlantState_Plant
+        }
+        else {
+            objPlanter.state = PlantState_Choose
+        }*/
+        debugFastMode = false
     }
 }
 

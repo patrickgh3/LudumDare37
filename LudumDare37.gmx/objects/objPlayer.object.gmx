@@ -181,9 +181,15 @@ if objPlanter.state == PlantState_Plant {
     if placeable and keyboard_check_pressed(ord('Z')) {
         var vb = instance_create(tileXWorld+16, tileYWorld+16, objVineBase)
         objPlanter.objectGrid[# tileX, tileY] = vb
-        objPlanter.state = PlantState_Choose
         audio_play_sound(sndPlop, 0, false)
         if global.tutorialState=0 global.tutorialState=1
+        global.seedsInventory -= 1
+        if global.seedsInventory &gt; 0 {
+            // stay in plant state
+        }
+        else {
+            objPlanter.state = PlantState_Choose
+        }
     }
 }
 else if objPlanter.state == PlantState_Choose {
@@ -293,12 +299,46 @@ with objVineBase {
         if not foundCloseVine and keyboard_check_pressed(ord('X')) {
             destroying = true
             objPlanter.state = PlantState_Destroy
+            global.seedsInventory += 1
         }
         foundCloseVine = true
     }
     else {
         destroyVisible = false
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objSeedbag2Fly">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with other instance_destroy()
+audio_play_sound(sndPlop, 0, false)
+global.seedsInventory += 1
+
+if objPlanter.state == PlantState_Draw {
+    scrClearPath()
+    objPlanter.state = PlantState_Plant
+}
+else if objPlanter.state == PlantState_Choose {
+    objPlanter.state = PlantState_Plant
 }
 </string>
           </argument>
@@ -326,6 +366,29 @@ with objVineBase {
 audio_play_sound(sndPlop, 0, false)
 global.seedsInventory += 1
 objPlanter.state = PlantState_Plant
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_text(10, 10, global.seedsInventory)
 </string>
           </argument>
         </arguments>
