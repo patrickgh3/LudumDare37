@@ -163,7 +163,7 @@
     <instance objName="objWall" x="480" y="512" name="inst_B745FF59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="928" y="512" name="inst_D48F2D29" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="864" y="768" name="inst_EBBFBCA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoatFence" x="736" y="1152" name="inst_D0F52BA1" locked="0" code="hp = 1&#xA;" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGoatFence" x="736" y="1152" name="inst_D0F52BA1" locked="0" code="hp = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGoat" x="608" y="1056" name="inst_BBF5D5F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="640" y="1152" name="inst_F06BBAB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="672" y="1152" name="inst_05D61895" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

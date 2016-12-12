@@ -103,7 +103,12 @@ alarm[1] = 300 + irandom(300)
     hitFence = true
     other.hp -= 1
     if other.hp &lt;= 0 {
-        with other instance_destroy()
+        with other 
+        {
+            instance_destroy();
+            instance_create(x,y,objGoatFenceBroken);
+        }
+        audio_play_sound(sndBreak,1,0);
     }
 }
 </string>

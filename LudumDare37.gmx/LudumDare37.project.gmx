@@ -15,6 +15,7 @@
     <sound>sound\sndThorn1</sound>
     <sound>sound\sndThorn2</sound>
     <sound>sound\sndSplash</sound>
+    <sound>sound\sndBreak</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="placeholder">
@@ -155,6 +156,7 @@
     <object>objects\objWall</object>
     <object>objects\objGoat</object>
     <object>objects\objGoatFence</object>
+    <object>objects\objGoatFenceBroken</object>
     <object>objects\objSeedbag2Fly</object>
     <object>objects\objSeedbag2</object>
     <objects name="plants">
