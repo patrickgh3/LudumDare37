@@ -220,6 +220,7 @@
       <object>objects\objTitlePlayer</object>
     </objects>
     <object>objects\objLastShine</object>
+    <object>objects\objGreenhouseTop</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
