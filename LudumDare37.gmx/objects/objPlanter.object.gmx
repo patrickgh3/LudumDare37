@@ -114,16 +114,18 @@ ds_list_destroy(pathListY)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*if state == PlantState_Plant {
-    // Draw potential vine planting positions
-    for (var xx=0; xx&lt;w; xx+=1) {
-        for (var yy=0; yy&lt;h; yy+=1) {
-            if scrTileIsValidPlant(xx, yy) {
-                draw_sprite(sprTilePlaceHere, 0, objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize)
+            <string>if objTillTransition.groupIndex &lt;= 1 {
+    if state == PlantState_Plant {
+        // Draw potential vine planting positions
+        for (var xx=0; xx&lt;w; xx+=1) {
+            for (var yy=0; yy&lt;h; yy+=1) {
+                if scrTileIsValidPlant(xx, yy) {
+                    draw_sprite(sprPlantHintPlaceholder, global.guiAnimT/15, objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize)
+                }
             }
         }
     }
-}*/
+}
 if state == PlantState_Choose {
     // Draw potential vine choice positions
     with objVineBase {

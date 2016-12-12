@@ -35,6 +35,7 @@ numSeedsPerRound = 4
 numSeeds = numSeedsPerRound
 
 ableToCancel = false
+cancellable = false // new variable
 
 tileX = 0
 tileY = 0
@@ -69,6 +70,8 @@ stepT = 0
           <argument>
             <kind>1</kind>
             <string>/// movement
+
+global.guiAnimT += 1
 
 var xLast = x
 var yLast = y
@@ -164,6 +167,8 @@ else {
             <string>/// place seeds and stuff
 
 ableToCancel = false
+cancellable = false
+justCancelled = false
 
 // Calculate the player's actual tile
 var invTileSize = 1/global.tileSize
@@ -228,6 +233,7 @@ if objPlanter.state == PlantState_Plant {
         }
         else {
             objPlanter.state = PlantState_Choose
+            scrPlayerUpdatePlaceable()
         }
     }
 }
@@ -240,7 +246,7 @@ else if objPlanter.state == PlantState_Choose {
         ds_list_add(objPlanter.pathListY, vineChoice.tileY)
         
         // Create cancel object
-        var cancelTileX = 4
+        /*var cancelTileX = 4
         var cancelTileY = 4
         var xx = x-objHouse.x
         var yy = y-objHouse.y
@@ -263,11 +269,12 @@ else if objPlanter.state == PlantState_Choose {
         var cancel = instance_create(objHouse.x+global.tileSize*cancelTileX,
         objHouse.y+global.tileSize*cancelTileY, objCancelDraw)
         
-        objPlanter.objectGrid[# cancelTileX, cancelTileY] = cancel
+        objPlanter.objectGrid[# cancelTileX, cancelTileY] = cancel*/
     }
 }
 
 if objPlanter.state == PlantState_Draw {
+    cancellable = true
     // Extend the path
     if placeable and keyboard_check_pressed(ord('Z')) {
         var s = instance_create(tileXWorld+16, tileYWorld+16, objSeed)
@@ -288,8 +295,17 @@ if objPlanter.state == PlantState_Draw {
         }
     }
     
+    // Press X to cancel
+    if cancellable and keyboard_check_pressed(ord('X')) {
+        scrClearPath()
+        audio_play_sound(sndCancelBoop, 0, false)
+        scrPlayerUpdatePlaceable()
+        cancellable = false
+        justCancelled = true
+    }
+    
     // Check if on top of cancel object
-    var objAtTile = objPlanter.objectGrid[# tileX, tileY]
+    /*var objAtTile = objPlanter.objectGrid[# tileX, tileY]
     if instance_exists(objAtTile) and objAtTile.object_index == objCancelDraw {
         ableToCancel = true
         objCancelDraw.image_index = 1
@@ -298,7 +314,7 @@ if objPlanter.state == PlantState_Draw {
             audio_play_sound(sndCancelBoop, 0, false)
         }
     }
-    else with objCancelDraw image_index = 0
+    else with objCancelDraw image_index = 0*/
 }
 
 uiAnimT += 1
@@ -325,24 +341,26 @@ uiAnimT += 1
             <string>/// destroy vines
 
 var foundCloseVine = false
-with objVineBase {
-    if not destroying
-    and point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 50
-    and ds_list_size(segmentList) &gt; 1
-    and objPlanter.state == PlantState_Choose
-    and instance_exists(bulbObj)
-    and (not global.tutorialDisableSpikes or doneGrowing)
-    and not bulbObj.growing {
-        destroyVisible = true
-        if not foundCloseVine and keyboard_check_pressed(ord('X')) {
-            destroying = true
-            objPlanter.state = PlantState_Destroy
-            global.seedsInventory += 1
+if not justCancelled {
+    with objVineBase {
+        if not destroying
+        and point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 50
+        and ds_list_size(segmentList) &gt; 1
+        and objPlanter.state == PlantState_Choose
+        and instance_exists(bulbObj)
+        and (not global.tutorialDisableSpikes or doneGrowing)
+        and not bulbObj.growing {
+            destroyVisible = true
+            if not foundCloseVine and keyboard_check_pressed(ord('X')) {
+                destroying = true
+                objPlanter.state = PlantState_Destroy
+                global.seedsInventory += 1
+            }
+            foundCloseVine = true
         }
-        foundCloseVine = true
-    }
-    else {
-        destroyVisible = false
+        else {
+            destroyVisible = false
+        }
     }
 }
 </string>
@@ -426,8 +444,35 @@ else if objPlanter.state == PlantState_Choose {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if placeable and global.tutorialZ == 0 {
-    draw_sprite(sprKeyZ,0,x,y-60);
+            <string>if placeable {
+    draw_set_alpha(0.2)
+    draw_set_color(c_white)
+    var xx = view_xview+view_wview
+    var yy = view_yview+view_hview
+    var w = 120
+    var h = 60
+    draw_rectangle(xx-w, yy-h, xx, yy, false)
+    draw_set_color(c_white)
+    draw_set_alpha(1)
+    if objPlanter.state == PlantState_Plant {
+        var spr = sprKeyZPlant
+    }
+    else {
+        var spr = sprKeyZWaterCan
+    }
+    draw_sprite(spr, global.guiAnimT/20, xx-60, yy-15);
+}
+if cancellable {
+    draw_set_alpha(0.2)
+    draw_set_color(c_white)
+    var xx = view_xview+view_wview
+    var yy = view_yview+view_hview-61
+    var w = 120
+    var h = 60
+    draw_rectangle(xx-w, yy-h, xx, yy, false)
+    draw_set_color(c_white)
+    draw_set_alpha(1)
+    draw_sprite(sprKeyXCancel, global.guiAnimT/20, xx-60, yy-15);
 }
 </string>
           </argument>
