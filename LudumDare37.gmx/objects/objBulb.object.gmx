@@ -41,6 +41,8 @@ touchedSeedbag2 = false
 spiky = false
 
 touchedPondInLifetime = false
+lastAngle = image_angle
+lastLastAngle = image_angle
 </string>
           </argument>
         </arguments>
@@ -86,7 +88,9 @@ touchedPondInLifetime = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if growing {
+            <string>lastLastAngle = lastAngle
+lastAngle = image_angle
+if growing {
     image_angle = point_direction(xLast, yLast, x, y)
 }
 
@@ -121,6 +125,7 @@ yLast = y
     path_position = sin( growT/growLength * pi / 2 )
     if path_position &gt;= 0.99 {
         path_position = 1
+        image_angle = lastLastAngle
         event_user(0)
     }
     
@@ -245,7 +250,7 @@ ds_list_clear(growSegments)
 
 x = floor(x/global.tileSize)*global.tileSize + global.tileSize/2
 y = floor(y/global.tileSize)*global.tileSize + global.tileSize/2
-image_angle = round(image_angle/90)*90
+image_angle = round(lastLastAngle/90)*90
 
 if parent.doneGrowing and touchedPondInLifetime {
     global.tutorialDisableSpikes = 0

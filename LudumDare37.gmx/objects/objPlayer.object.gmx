@@ -354,14 +354,16 @@ if not justCancelled {
         if not destroying
         and point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 50
         //and ds_list_size(segmentList) &gt; 1
-        and objPlanter.state == PlantState_Choose
+        and (objPlanter.state == PlantState_Choose or objPlanter.state == PlantState_Plant)
         and instance_exists(bulbObj)
         //and (not global.tutorialDisableSpikes or doneGrowing)
         and not bulbObj.growing {
             destroyVisible = true
             if not foundCloseVine and keyboard_check_pressed(ord('X')) {
                 destroying = true
-                objPlanter.state = PlantState_Destroy
+                if objPlanter.state != PlantState_Plant {
+                    objPlanter.state = PlantState_Destroy
+                }
                 global.seedsInventory += 1
             }
             foundCloseVine = true
