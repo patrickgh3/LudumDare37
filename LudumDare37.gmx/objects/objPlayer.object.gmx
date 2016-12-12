@@ -493,7 +493,7 @@ if global.tutorialArrowKeys {
     draw_rectangle(xx-w, yy-h, xx, yy, false)
     draw_set_color(c_white)
     draw_set_alpha(1)
-    draw_sprite(sprArrowKeysPlaceholder, global.guiAnimT/20, xx-60, yy-15);
+    draw_sprite(sprArrowKeys, global.guiAnimT/15, xx-60, yy-15);
 }
 </string>
           </argument>
