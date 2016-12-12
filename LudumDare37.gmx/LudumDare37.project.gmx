@@ -15,6 +15,7 @@
     <sound>sound\sndThorn1</sound>
     <sound>sound\sndThorn2</sound>
     <sound>sound\sndSplash</sound>
+    <sound>sound\sndBreak</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="placeholder">
@@ -159,6 +160,9 @@
     <object>objects\objGoat</object>
     <object>objects\objGoatFenceV</object>
     <object>objects\objGoatFence</object>
+    <object>objects\objGoatFenceBroken</object>
+    <object>objects\objSeedbag2Fly</object>
+    <object>objects\objSeedbag2</object>
     <object>objects\objMushroom</object>
     <object>objects\objMushroomGate</object>
     <objects name="plants">
@@ -187,8 +191,6 @@
     <object>objects\objSplashPoint1</object>
     <object>objects\objSplashPoint2</object>
     <object>objects\objLilypad</object>
-    <object>objects\objSeedbag2Fly</object>
-    <object>objects\objSeedbag2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
