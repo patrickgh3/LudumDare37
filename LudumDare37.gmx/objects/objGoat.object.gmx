@@ -32,6 +32,8 @@ hitFence = false
 index = -1
 special = 0
 shine1 = noone
+
+jumping = false
 </string>
           </argument>
         </arguments>
@@ -85,6 +87,56 @@ alarm[1] = 300 + irandom(300)
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if jumping and y &gt; ystart {
+    y = ystart
+    jumping = false
+    gravity = 0
+    vspeed = 0
+    
+    sprite_index = sprGoatWalking
+    image_speed = 0.3
+    
+    if special==0 {
+        var tx = x+1 // fallback case (should never happen)
+        var ty = 0
+        with objGoatFence {
+            if index == other.index {
+                var tx = x+32
+                var ty = y+16
+            }
+        }
+        direction = point_direction(x, y, tx, ty)
+        if x &lt; tx image_xscale = 1
+        else image_xscale = -1
+    }
+    else if special == 1 {
+        direction = 0
+        image_xscale = 1
+    }
+    speed = 3
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="objGoatFence">
       <action>
         <libid>1</libid>
@@ -112,6 +164,35 @@ alarm[1] = 300 + irandom(300)
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// create arrow
+shine1 = instance_create(x, y-28, objPondShine)
+with shine1 {
+    image_alpha = 0.9
+    parent=other.id
+    animT = 0
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
@@ -133,52 +214,27 @@ alarm[1] = 300 + irandom(300)
 
 if not runningAway {
     runningAway = true
-    sprite_index = sprGoatWalking
-    image_speed = 0.3
-    
-    if special==0 {
-        with objGoatFence {
-            if index == other.index {
-                var tx = x+32
-                var ty = y+16
-            }
-        }
-        direction = point_direction(x, y, tx, ty)
-        if x &lt; tx image_xscale = 1
-        else image_xscale = -1
-    }
-    else if special == 1 {
-        direction = 0
-        image_xscale = 1
-    }
-    speed = 3
+    jumping = true
+    vspeed = -6
+    gravity = 0.3
+    sprite_index = sprGoatIdle
+    image_speed = 0
     
     with shine1 instance_destroy()
     shine1 = noone
+    
+    // create arrow on next goat
+    if index == 1 {
+        with objGoat if index == 2 {
+            event_user(1)
+        }
+    }
+    if index == 2 {
+        with objGoat if index == 3 {
+            event_user(1)
+        }
+    }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>instance_destroy()
 </string>
           </argument>
         </arguments>

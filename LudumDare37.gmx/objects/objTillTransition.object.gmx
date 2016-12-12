@@ -141,12 +141,7 @@ if groupIndex == 1 {
 }
 if groupIndex == 2 {
     with objGoat if index == 1 {
-        shine1 = instance_create(x, y-28, objPondShine)
-        with shine1 {
-            image_alpha = 0.9
-            parent=other.id
-            animT = 0
-        }
+        event_user(1)
     }
 }
 
