@@ -26,6 +26,8 @@
       <sprite>sprites\sprite83</sprite>
       <sprite>sprites\sprPlaceholerMushroom</sprite>
       <sprite>sprites\sprPlaceholderMushroomLit</sprite>
+      <sprite>sprites\sprPlantHintPlaceholder</sprite>
+      <sprite>sprites\sprArrowKeysPlaceholder</sprite>
     </sprites>
     <sprites name="editor">
       <sprite>sprites\sprEditorSquare32</sprite>
@@ -128,9 +130,9 @@
     <sprite>sprites\sprMushroom3</sprite>
     <sprite>sprites\sprMushroomGate</sprite>
     <sprite>sprites\sprMushroomGate2</sprite>
+    <sprite>sprites\sprTitleText</sprite>
     <sprite>sprites\sprMushroomGate3</sprite>
     <sprite>sprites\sprProgress</sprite>
-    <sprite>sprites\sprPlantHintPlaceholder</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
@@ -203,9 +205,15 @@
     <object>objects\objSplashPoint1</object>
     <object>objects\objSplashPoint2</object>
     <object>objects\objLilypad</object>
+    <objects name="title">
+      <object>objects\objTitle</object>
+      <object>objects\objTitleFade</object>
+      <object>objects\objTitlePlayer</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
+    <room>rooms\roomTitle</room>
     <room>rooms\roomMain</room>
     <room>rooms\roomOriginalSize</room>
   </rooms>
