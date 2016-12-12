@@ -43,10 +43,10 @@ segmentList = ds_list_create()
 
 var seg = instance_create(x, y, objVineSegment);
 ds_list_add(segmentList, seg)
-if dx == -1 { seg.sprite_index=sprVineStartL bulbObj.image_angle=180 }
-else if dx == 1 { seg.sprite_index=sprVineStartR bulbObj.image_angle=0 }
-else if dy == -1 { seg.sprite_index=sprVineStartU bulbObj.image_angle=90 }
-else if dy == 1 { seg.sprite_index=sprVineStartD bulbObj.image_angle=270 }
+if dx == -1 { seg.sprite_index=sprVineStartL bulbObj.image_angle=180 facing = 'left'}
+else if dx == 1 { seg.sprite_index=sprVineStartR bulbObj.image_angle=0 facing = 'right'}
+else if dy == -1 { seg.sprite_index=sprVineStartU bulbObj.image_angle=90 facing = 'top'}
+else if dy == 1 { seg.sprite_index=sprVineStartD bulbObj.image_angle=270 facing = 'bottom'}
 
 lastDx = dx
 lastDy = dy
@@ -128,7 +128,7 @@ if destroying {
     }
     else if destroyState == 2 {
         destroyT += 1
-        if destroyT == 60 {
+        if destroyT == 40 {//60
             destroyState = 3
             destroyT = 0
             spikeIndex = 0
@@ -273,7 +273,25 @@ if ds_list_size(segmentList) &gt; 1 and not destroying {
     // Dear Lss: "num" holds a value between 1 and 12
     //draw_text(x, y-30, string(num)+'/'+string(maxLength))
     
-    draw_sprite(sprProgress,num-1,x,y-32)
+    var xx = x
+    var yy = y
+    var dx = 32
+    var dy = 32
+    if facing == 'right' {
+        xx += dx
+    }
+    if facing == 'left' {
+        xx -= dx
+    }
+    if facing == 'top' {
+        yy -= dy
+    }
+    if facing == 'bottom' {
+        yy += dy
+    }
+    var s = .75
+    draw_sprite_ext(sprProgressBack,0,xx,yy, s, s, 0, c_white, 1)
+    draw_sprite_ext(sprProgress,num-1,xx,yy, s, s, 0, c_white, 1)
 }
 </string>
           </argument>

@@ -133,6 +133,7 @@
     <sprite>sprites\sprTitleText</sprite>
     <sprite>sprites\sprMushroomGate3</sprite>
     <sprite>sprites\sprProgress</sprite>
+    <sprite>sprites\sprProgressBack</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>

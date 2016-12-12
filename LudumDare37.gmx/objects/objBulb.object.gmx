@@ -277,7 +277,9 @@ if instance_exists(touchedPond) {
 if touchedSeedbag2 {
     with objSeedbag2 {
         instance_create(x, y, objSeedbag2Fly)
+        with shine1 instance_destroy()
         instance_destroy()
+        audio_play_sound(sndDig, 0, false)
     }
     touchedSeedbag2 = false
 }

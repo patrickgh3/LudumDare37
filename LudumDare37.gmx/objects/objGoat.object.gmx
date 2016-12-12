@@ -234,6 +234,9 @@ if not runningAway {
             event_user(1)
         }
     }
+    if index == 3 {
+        with objSeedbag2 event_user(0)
+    }
 }
 </string>
           </argument>
