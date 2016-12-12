@@ -262,7 +262,9 @@ if ds_list_size(segmentList) &gt; 1 and not destroying {
         num -= floor((1-(bulbObj.path_position+(1-bulbObj.fractionToStopAt)))*4)
     }
     // Dear Lss: "num" holds a value between 1 and 12
-    draw_text(x, y-30, string(num)+'/'+string(maxLength))
+    //draw_text(x, y-30, string(num)+'/'+string(maxLength))
+    
+    draw_sprite(sprProgress,num-1,x,y-32)
 }
 </string>
           </argument>

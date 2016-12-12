@@ -124,6 +124,7 @@
     <sprite>sprites\sprMushroom2</sprite>
     <sprite>sprites\sprMushroomGate</sprite>
     <sprite>sprites\sprMushroomGate2</sprite>
+    <sprite>sprites\sprProgress</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
