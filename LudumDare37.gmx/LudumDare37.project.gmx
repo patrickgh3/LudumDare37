@@ -137,6 +137,7 @@
     <sprite>sprites\sprProgress</sprite>
     <sprite>sprites\sprProgressBack</sprite>
     <sprite>sprites\sprArrowKeys</sprite>
+    <sprite>sprites\sprGreenhousetop</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
@@ -156,6 +157,8 @@
     <background>background\bgTree</background>
     <background>background\bgTreeDead</background>
     <background>background\bgFence</background>
+    <background>background\bgGreenhousebottom</background>
+    <background>background\bgGreenhouseCover</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pathSeedbag2Fly</path>
