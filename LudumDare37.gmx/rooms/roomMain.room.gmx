@@ -179,7 +179,6 @@
     <instance objName="objGoatFence" x="672" y="1152" name="inst_48B94C13" locked="0" code="index = 3&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="640" y="1152" name="inst_7813A27D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="736" y="1152" name="inst_4313BEA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSeedbag2" x="672" y="1184" name="inst_53159159" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGoatFence" x="704" y="960" name="inst_211E9663" locked="0" code="index=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="480" y="960" name="inst_0758A0EC" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="512" y="1024" name="inst_A8CE25CC" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
