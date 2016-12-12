@@ -47,6 +47,8 @@ image_speed = 0
 CanDisplay = 0
 
 stepT = 0
+
+frozen = false
 </string>
           </argument>
         </arguments>
@@ -80,6 +82,12 @@ var left = keyboard_check(vk_left)
 var right = keyboard_check(vk_right)
 var up = keyboard_check(vk_up)
 var down = keyboard_check(vk_down)
+if frozen {
+    left = false
+    right = false
+    up = false
+    down = false
+}
 
 if left {
     x -= walkSpeed
@@ -389,6 +397,7 @@ if not justCancelled {
 audio_play_sound(sndPlop, 0, false)
 global.seedsInventory += 1
 objPlanter.state = PlantState_Plant
+global.tutorialArrowKeys = 0
 </string>
           </argument>
         </arguments>
@@ -473,6 +482,18 @@ if cancellable {
     draw_set_color(c_white)
     draw_set_alpha(1)
     draw_sprite(sprKeyXCancel, global.guiAnimT/20, xx-60, yy-15);
+}
+if global.tutorialArrowKeys {
+    draw_set_alpha(0.2)
+    draw_set_color(c_white)
+    var xx = view_xview+view_wview
+    var yy = view_yview+view_hview
+    var w = 120
+    var h = 60
+    draw_rectangle(xx-w, yy-h, xx, yy, false)
+    draw_set_color(c_white)
+    draw_set_alpha(1)
+    draw_sprite(sprArrowKeysPlaceholder, global.guiAnimT/20, xx-60, yy-15);
 }
 </string>
           </argument>

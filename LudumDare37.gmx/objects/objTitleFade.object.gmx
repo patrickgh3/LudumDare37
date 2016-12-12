@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,14 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>groupIndex = 0
-active = false
-t = 0
-
-transitionLength = 260
-dAlpha = 1/180
-
-debugFastMode = false
+            <string>state = 0
+alpha = 0
 </string>
           </argument>
         </arguments>
@@ -55,60 +49,26 @@ debugFastMode = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.debugMode {
-    if not active and keyboard_check_pressed(ord('U')) and (groupIndex==0 or groupIndex==1) {
-        debugFastMode = true
-        global.tutorialZ = 1
-        global.tutorialDisableSpikes = 0
-        //global.tutorialArrowKeys = 0
-        event_user(0)
+            <string>if state == 0 {
+    alpha += 1/60
+    if alpha &gt;= 1 {
+        room_goto_next()
+        state = 1
+        alpha = 1
     }
 }
-
-if active {
-    t += 1
-    var layer;
-    if groupIndex==1 layer = 95
-    if groupIndex==2 layer = 94
-    
-    var da = dAlpha
-    var tl = transitionLength
-    if debugFastMode {
-        da = 1/20
-        tl = 50
-    }
-    
-    var tiles = tile_get_ids_at_depth(layer)
-    for (var i=0; i&lt;array_length_1d(tiles); i+=1) {
-        var tile = tiles[i]
-        tile_set_alpha(tile, max(tile_get_alpha(tile)-da, 0))
-    }
-    
-    if t == tl {
-        active = false
-        with objUnfertileGround {
-            if group == other.groupIndex {
-                instance_destroy()
-            }
-        }
-        with objDirtSplash instance_destroy()
-        /*if global.seedsInventory &gt; 0 {
-            objPlanter.state = PlantState_Plant
-        }
-        else {
-            objPlanter.state = PlantState_Choose
-        }*/
-        debugFastMode = false
+else if state == 1 {
+    alpha -= 1/60
+    if alpha &lt;= 0 {
+        instance_destroy()
     }
 }
-
-
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="10">
+    <event eventtype="8" enumb="75">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -125,31 +85,11 @@ if active {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>groupIndex += 1
-active = true
-t = 0
-//objPlanter.state = PlantState_Destroy
-
-var pointObj = objSplashPoint1
-if groupIndex == 2 pointObj = objSplashPoint2
-
-if groupIndex == 1 {
-    with objPond {
-        if index == 3 or index == 4 {
-            event_user(0)
-        }
-    }
-}
-if groupIndex == 2 {
-    with objGoat if index == 1 {
-        event_user(1)
-    }
-}
-
-with pointObj {
-    instance_destroy()
-    instance_create(x+16, y+16, objDirtSplash)
-}
+            <string>draw_set_alpha(alpha)
+draw_set_color(c_black)
+draw_rectangle(0, 0, view_wview, view_hview, false)
+draw_set_color(c_white)
+draw_set_alpha(1)
 </string>
           </argument>
         </arguments>

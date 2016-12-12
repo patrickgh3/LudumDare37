@@ -1,6 +1,7 @@
 global.tileSize = 32
 global.tutorialZ = 0
 global.tutorialDisableSpikes = 1
+global.tutorialArrowKeys = 1
 global.debugMode = true
 global.seedsInventory = 0
 global.guiAnimT = 0
