@@ -129,6 +129,7 @@
     <background>background\bgGrass</background>
     <background>background\bgGrassDefaultTile</background>
     <background>background\bgTiles</background>
+    <background>background\bgTempCorner</background>
     <background>background\bgGlassHorizontal</background>
     <background>background\bgGlassHorizontalBottom</background>
     <background>background\bgTopGlass</background>
@@ -160,7 +161,6 @@
     <object>objects\objGoat</object>
     <object>objects\objGoatFenceV</object>
     <object>objects\objGoatFence</object>
-    <object>objects\objGoatFenceBroken</object>
     <object>objects\objSeedbag2Fly</object>
     <object>objects\objSeedbag2</object>
     <object>objects\objMushroom</object>
