@@ -348,6 +348,9 @@ uiAnimT += 1
             <kind>1</kind>
             <string>/// destroy vines
 
+var goDestroy = false
+var setADestroyVisible = false
+
 var foundCloseVine = false
 if not justCancelled {
     with objVineBase {
@@ -357,20 +360,31 @@ if not justCancelled {
         and (objPlanter.state == PlantState_Choose or objPlanter.state == PlantState_Plant)
         and instance_exists(bulbObj)
         //and (not global.tutorialDisableSpikes or doneGrowing)
+        and not setADestroyVisible
         and not bulbObj.growing {
             destroyVisible = true
-            if not foundCloseVine and keyboard_check_pressed(ord('X')) {
-                destroying = true
-                if objPlanter.state != PlantState_Plant {
-                    objPlanter.state = PlantState_Destroy
-                }
-                global.seedsInventory += 1
+            setADestroyVisible = true
+            if /*not foundCloseVine and */keyboard_check_pressed(ord('X')) {
+                goDestroy = true
+                /*
+                */
             }
-            foundCloseVine = true
+            //foundCloseVine = true
         }
         else {
             destroyVisible = false
         }
+    }
+}
+
+if goDestroy {
+    var closestVine = instance_nearest(x, y, objVineBase)
+    with closestVine {
+        destroying = true
+        if objPlanter.state != PlantState_Plant {
+            objPlanter.state = PlantState_Destroy
+        }
+        global.seedsInventory += 1
     }
 }
 </string>

@@ -37,6 +37,7 @@
       <sprite>sprites\sprEditorP</sprite>
       <sprite>sprites\sprEditorSplashPoint1</sprite>
       <sprite>sprites\sprEditorSplashPoint2</sprite>
+      <sprite>sprites\sprEditorSplashPoint3</sprite>
       <sprite>sprites\sprite84</sprite>
     </sprites>
     <sprites name="player">
@@ -208,12 +209,14 @@
     <object>objects\objDirtSplash</object>
     <object>objects\objSplashPoint1</object>
     <object>objects\objSplashPoint2</object>
+    <object>objects\objSplashPoint3</object>
     <object>objects\objLilypad</object>
     <objects name="title">
       <object>objects\objTitle</object>
       <object>objects\objTitleFade</object>
       <object>objects\objTitlePlayer</object>
     </objects>
+    <object>objects\objLastShine</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>

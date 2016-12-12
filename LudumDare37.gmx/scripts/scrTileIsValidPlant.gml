@@ -9,7 +9,7 @@ with objPlanter {
     
     if objectGrid[# scrX, scrY] != noone return false
     
-    if objectGrid[# clamp(scrX, 0,w-1), clamp(scrY+1, 0,h-1)] != noone return false
+    /*if objectGrid[# clamp(scrX, 0,w-1), clamp(scrY+1, 0,h-1)] != noone return false
     if objectGrid[# clamp(scrX, 0,w-1), clamp(scrY+2, 0,h-1)] != noone return false
     if objectGrid[# clamp(scrX, 0,w-1), clamp(scrY-1, 0,h-1)] != noone return false
     if objectGrid[# clamp(scrX, 0,w-1), clamp(scrY-2, 0,h-1)] != noone return false
@@ -22,7 +22,7 @@ with objPlanter {
     if objectGrid[# clamp(scrX+1, 0,w-1), clamp(scrY-1, 0,h-1)] != noone return false
     if objectGrid[# clamp(scrX+1, 0,w-1), clamp(scrY+1, 0,h-1)] != noone return false
     if objectGrid[# clamp(scrX-1, 0,w-1), clamp(scrY-1, 0,h-1)] != noone return false
-    if objectGrid[# clamp(scrX-1, 0,w-1), clamp(scrY+1, 0,h-1)] != noone return false
+    if objectGrid[# clamp(scrX-1, 0,w-1), clamp(scrY+1, 0,h-1)] != noone return false*/
     
     if collision_point(objHouse.x+scrX*global.tileSize,
             objHouse.y+scrY*global.tileSize,

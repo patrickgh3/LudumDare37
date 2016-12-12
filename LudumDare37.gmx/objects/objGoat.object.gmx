@@ -34,6 +34,34 @@ special = 0
 shine1 = noone
 
 jumping = false
+playedSound=false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// fade sound
+
+if playedSound {
+    audio_sound_gain(myRunSound, 0, 2000)
+}
 </string>
           </argument>
         </arguments>
@@ -132,7 +160,11 @@ alarm[1] = 300 + irandom(300)
     }
     speed = 3
 }
-if sprite_index = sprGoatWalking &amp;&amp; !audio_is_playing(sndGoatRun) audio_play_sound(sndGoatRun,1,0);
+if sprite_index = sprGoatWalking &amp;&amp; !playedSound {
+    myRunSound = audio_play_sound(sndGoatRun,1,1);
+    playedSound = true
+    alarm[2] = 60*2
+}
 </string>
           </argument>
         </arguments>
@@ -183,7 +215,7 @@ if sprite_index = sprGoatWalking &amp;&amp; !audio_is_playing(sndGoatRun) audio_
           <argument>
             <kind>1</kind>
             <string>/// create arrow
-shine1 = instance_create(x, y-28, objPondShine)
+shine1 = instance_create(x, y-24, objPondShine)
 with shine1 {
     image_alpha = 0.9
     parent=other.id
@@ -237,7 +269,12 @@ if not runningAway {
         }
     }
     if index == 3 {
-        with objSeedbag2 event_user(0)
+        with objPond if index == 5 {
+            event_user(0)
+        }
+    }
+    if index == 4 {
+        with objLastShine visible = true
     }
 }
 </string>
@@ -276,7 +313,9 @@ if not runningAway {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_stop_sound(sndGoatRun);
+            <string>if playedSound {
+    audio_stop_sound(myRunSound);
+}
 </string>
           </argument>
         </arguments>

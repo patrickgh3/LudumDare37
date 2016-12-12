@@ -277,6 +277,10 @@ if instance_exists(touchedPond) {
     and global.pondDrained[3] and global.pondDrained[4] {
         with objTillTransition event_user(0)
     }
+    else if objTillTransition.groupIndex == 2
+    and global.pondDrained[5] {
+        with objTillTransition event_user(0)
+    }
 }
 
 if touchedSeedbag2 {
@@ -285,6 +289,7 @@ if touchedSeedbag2 {
         with shine1 instance_destroy()
         instance_destroy()
         audio_play_sound(sndDig, 0, false)
+        with objGoat if index == 4 event_user(1)
     }
     touchedSeedbag2 = false
 }

@@ -56,7 +56,7 @@ debugFastMode = false
           <argument>
             <kind>1</kind>
             <string>if global.debugMode {
-    if not active and keyboard_check_pressed(ord('U')) and (groupIndex==0 or groupIndex==1) {
+    if not active and keyboard_check_pressed(ord('U')) and (groupIndex==0 or groupIndex==1 or groupIndex==2) {
         debugFastMode = true
         global.tutorialZ = 1
         global.tutorialDisableSpikes = 0
@@ -70,6 +70,7 @@ if active {
     var layer;
     if groupIndex==1 layer = 95
     if groupIndex==2 layer = 94
+    if groupIndex==3 layer = 93
     
     var da = dAlpha
     var tl = transitionLength
@@ -132,6 +133,7 @@ t = 0
 
 var pointObj = objSplashPoint1
 if groupIndex == 2 pointObj = objSplashPoint2
+if groupIndex == 3 pointObj = objSplashPoint3
 
 if groupIndex == 1 {
     with objPond {
@@ -144,6 +146,9 @@ if groupIndex == 2 {
     with objGoat if index == 1 {
         event_user(1)
     }
+}
+if groupIndex == 3 {
+    with objSeedbag2 event_user(0)
 }
 
 with pointObj {
