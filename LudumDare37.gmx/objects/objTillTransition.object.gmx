@@ -58,6 +58,8 @@ debugFastMode = false
             <string>if global.debugMode {
     if not active and keyboard_check_pressed(ord('U')) and (groupIndex==0 or groupIndex==1) {
         debugFastMode = true
+        global.tutorialZ = 1
+        global.tutorialDisableSpikes = 0
         event_user(0)
     }
 }
