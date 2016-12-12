@@ -106,6 +106,9 @@
     <sprite>sprites\sprWaterDrop</sprite>
     <sprite>sprites\sprKeyZ</sprite>
     <sprite>sprites\sprKeyX</sprite>
+    <sprite>sprites\sprKeyXCancel</sprite>
+    <sprite>sprites\sprKeyZWaterCan</sprite>
+    <sprite>sprites\sprKeyZPlant</sprite>
     <sprite>sprites\sprKeyX2</sprite>
     <sprite>sprites\sprSeedbag</sprite>
     <sprite>sprites\sprArrow</sprite>
@@ -124,6 +127,7 @@
     <sprite>sprites\sprMushroom2</sprite>
     <sprite>sprites\sprMushroomGate</sprite>
     <sprite>sprites\sprMushroomGate2</sprite>
+    <sprite>sprites\sprPlantHintPlaceholder</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
