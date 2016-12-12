@@ -127,9 +127,12 @@
     <sprite>sprites\sprFenceV</sprite>
     <sprite>sprites\sprMushroom</sprite>
     <sprite>sprites\sprMushroom2</sprite>
+    <sprite>sprites\sprMushroom3</sprite>
     <sprite>sprites\sprMushroomGate</sprite>
     <sprite>sprites\sprMushroomGate2</sprite>
     <sprite>sprites\sprTitleText</sprite>
+    <sprite>sprites\sprMushroomGate3</sprite>
+    <sprite>sprites\sprProgress</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
