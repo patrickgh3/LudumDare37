@@ -1,5 +1,6 @@
 global.tileSize = 32
-global.tutorialState=0
+global.tutorialZ = 0
+global.tutorialDisableSpikes = 1
 global.debugMode = true
 global.seedsInventory = 0
 

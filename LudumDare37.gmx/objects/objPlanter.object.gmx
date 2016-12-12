@@ -139,7 +139,7 @@ if state == PlantState_Choose {
                 if yo=1 arrowRotation = 270
                 
                 if scrTileIsValidChoose(xx, yy) {
-                    draw_sprite_ext(sprArrow, 0, objHouse.x+xx*global.tileSize+16, objHouse.y+yy*global.tileSize+16,1,1,arrowRotation,c_white,1)
+                    draw_sprite_ext(sprArrow2, 0, objHouse.x+xx*global.tileSize+16, objHouse.y+yy*global.tileSize+16,1,1,arrowRotation,c_white,1)
                 }
             }
         }
@@ -167,7 +167,7 @@ else if state == PlantState_Draw {
                 //scrDrawRectSize(objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize,
                 //global.tileSize, global.tileSize, true)
                 if scrTileIsValidPath(xx, yy) {
-                    draw_sprite_ext(sprArrow, 0, objHouse.x+xx*global.tileSize+16, objHouse.y+yy*global.tileSize+16,1,1,arrowRotation,c_white,1)
+                    draw_sprite_ext(sprArrow2, 0, objHouse.x+xx*global.tileSize+16, objHouse.y+yy*global.tileSize+16,1,1,arrowRotation,c_white,1)
                 }
             }
         }

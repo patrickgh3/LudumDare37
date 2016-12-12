@@ -106,8 +106,10 @@
     <sprite>sprites\sprWaterDrop</sprite>
     <sprite>sprites\sprKeyZ</sprite>
     <sprite>sprites\sprKeyX</sprite>
+    <sprite>sprites\sprKeyX2</sprite>
     <sprite>sprites\sprSeedbag</sprite>
     <sprite>sprites\sprArrow</sprite>
+    <sprite>sprites\sprArrow2</sprite>
     <sprite>sprites\sprSparkle</sprite>
     <sprite>sprites\sprGoatWalking</sprite>
     <sprite>sprites\sprGoatIdle</sprite>
@@ -156,6 +158,7 @@
     <script>scripts\scrTileIsValidPlant.gml</script>
     <script>scripts\scrClearPath.gml</script>
     <script>scripts\scrVineToSpikeSprite.gml</script>
+    <script>scripts\scrPlayerUpdatePlaceable.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objPlayer</object>

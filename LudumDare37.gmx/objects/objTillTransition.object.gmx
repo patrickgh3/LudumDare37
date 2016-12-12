@@ -130,6 +130,24 @@ t = 0
 var pointObj = objSplashPoint1
 if groupIndex == 2 pointObj = objSplashPoint2
 
+if groupIndex == 1 {
+    with objPond {
+        if index == 3 or index == 4 {
+            event_user(0)
+        }
+    }
+}
+if groupIndex == 2 {
+    with objGoat if index == 1 {
+        shine1 = instance_create(x, y-28, objPondShine)
+        with shine1 {
+            image_alpha = 0.9
+            parent=other.id
+            animT = 0
+        }
+    }
+}
+
 with pointObj {
     instance_destroy()
     instance_create(x+16, y+16, objDirtSplash)

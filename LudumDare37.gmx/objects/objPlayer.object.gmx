@@ -165,24 +165,63 @@ else {
 
 ableToCancel = false
 
-// Calculate the player's tile
-tileX = floor((x-objHouse.x) / global.tileSize)
-tileY = floor((y-objHouse.y) / global.tileSize)
+// Calculate the player's actual tile
+var invTileSize = 1/global.tileSize
+tileX = floor((x-objHouse.x)*invTileSize)
+tileY = floor((y-objHouse.y)*invTileSize)
+scrPlayerUpdatePlaceable()
+
+// if not placeable, search around to see if there's a nearby place that is
+// (check 8 points in a square around us
+/*if not placeable {
+    // cardinals first
+    var off = 8
+    for (var xo=-1; xo&lt;=1; xo+=1) {
+        for (var yo=-1; yo&lt;=1; yo+=1) {
+            if abs(xo) == abs(yo) continue
+            tileX = floor((x+xo*off-objHouse.x)*invTileSize)
+            tileY = floor((y+yo*off-objHouse.y)*invTileSize)
+            scrPlayerUpdatePlaceable()
+            if placeable break
+        }
+        if placeable break
+    }
+    // diagonals second
+    if not placeable {
+    for (var xo=-1; xo&lt;=1; xo+=1) {
+        for (var yo=-1; yo&lt;=1; yo+=1) {
+            if abs(xo) != abs(yo) continue
+            var off = 10
+            tileX = floor((x+xo*off-objHouse.x)*invTileSize)
+            tileY = floor((y+yo*off-objHouse.y)*invTileSize)
+            scrPlayerUpdatePlaceable()
+            if placeable break
+        }
+        if placeable break
+    }
+    }
+    // we weren't able to find an additional spot, so go back to original
+    if not placeable {
+        tileX = floor((x-objHouse.x)*invTileSize)
+        tileY = floor((y-objHouse.y)*invTileSize)
+        scrPlayerUpdatePlaceable()
+    }
+}*/
+
 tileXWorld = objHouse.x + tileX*global.tileSize
 tileYWorld = objHouse.y + tileY*global.tileSize
 
+// state actions
 if objPlanter.state == PlantState_Destroy {
     placeable = false
 }
 
 if objPlanter.state == PlantState_Plant {
     // Plant vine
-    placeable = scrTileIsValidPlant(tileX, tileY)
     if placeable and keyboard_check_pressed(ord('Z')) {
         var vb = instance_create(tileXWorld+16, tileYWorld+16, objVineBase)
         objPlanter.objectGrid[# tileX, tileY] = vb
         audio_play_sound(sndPlop, 0, false)
-        if global.tutorialState=0 global.tutorialState=1
         global.seedsInventory -= 1
         if global.seedsInventory &gt; 0 {
             // stay in plant state
@@ -194,8 +233,6 @@ if objPlanter.state == PlantState_Plant {
 }
 else if objPlanter.state == PlantState_Choose {
     // Choose vine
-    vineChoice = scrTileIsValidChoose(tileX, tileY)
-    placeable = instance_exists(vineChoice)
     if placeable and keyboard_check_pressed(ord('Z')) {
         // Create first seed
         objPlanter.state = PlantState_Draw
@@ -232,7 +269,6 @@ else if objPlanter.state == PlantState_Choose {
 
 if objPlanter.state == PlantState_Draw {
     // Extend the path
-    placeable = scrTileIsValidPath(tileX, tileY) and numSeeds &gt; 0
     if placeable and keyboard_check_pressed(ord('Z')) {
         var s = instance_create(tileXWorld+16, tileYWorld+16, objSeed)
         objPlanter.objectGrid[# tileX, tileY] = s
@@ -248,6 +284,7 @@ if objPlanter.state == PlantState_Draw {
         if numSeeds == 0 {
             scrGrowVine()
             audio_play_sound(sndGrow, 0, false)
+            global.tutorialZ = 1
         }
     }
     
@@ -294,6 +331,7 @@ with objVineBase {
     and ds_list_size(segmentList) &gt; 1
     and objPlanter.state == PlantState_Choose
     and instance_exists(bulbObj)
+    and (not global.tutorialDisableSpikes or doneGrowing)
     and not bulbObj.growing {
         destroyVisible = true
         if not foundCloseVine and keyboard_check_pressed(ord('X')) {
@@ -371,6 +409,31 @@ else if objPlanter.state == PlantState_Choose {
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if placeable and global.tutorialZ == 0 {
+    draw_sprite(sprKeyZ,0,x,y-60);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -401,24 +464,11 @@ if placeable {
     draw_rectangle(tileXWorld-rectOff, tileYWorld-rectOff,
         tileXWorld+global.tileSize-1+rectOff, tileYWorld+global.tileSize-1+rectOff, true)
     draw_sprite(sprArrowDown, 0, tileXWorld+global.tileSize/2, tileYWorld+4-arrowOff)
-    if global.tutorialState=0
-    {
-        draw_sprite(sprKeyZ,0,x,y-60);
-    }
     draw_set_color(c_white)
 }
 else if not ableToCancel {
     //draw_sprite_ext(sprNoSelectSquare, 0, tileXWorld, tileYWorld, 1, 1, 0, c_white, 1)
 }
-
-// Draw num seeds
-
-/*
-draw_set_color(c_white)
-draw_set_halign(fa_left)
-draw_set_valign(fa_top)
-draw_text(x-10, y-38, 'x'+string(numSeeds))
-*/
 
 
 

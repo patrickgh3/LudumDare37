@@ -51,7 +51,7 @@ lastDx = dx
 lastDy = dy
 
 doneGrowing = false
-maxLength = 10
+maxLength = 12
 destroyVisible = false
 
 destroying = false
@@ -218,7 +218,7 @@ if destroying {
             <kind>1</kind>
             <string>if destroyVisible
 {
-    draw_sprite(sprKeyX,0,x,y-30);
+    draw_sprite(sprKeyX2,0,x,y-30);
 }
 </string>
           </argument>
@@ -250,6 +250,20 @@ if destroyVisible {
     draw_set_valign(fa_top)
     draw_text(x+16, y-50, 'X - Spikes')
 }*/
+
+if ds_list_size(segmentList) &gt; 1 and not destroying {
+    draw_set_halign(fa_center)
+    draw_set_valign(fa_top)
+    draw_set_color(c_white)
+    draw_set_alpha(1)
+    var num = ds_list_size(segmentList)-1
+    if bulbObj.growing {
+        // a clear, understandable, well-written line of code
+        num -= floor((1-(bulbObj.path_position+(1-bulbObj.fractionToStopAt)))*4)
+    }
+    // Dear Lss: "num" holds a value between 1 and 12
+    draw_text(x, y-30, string(num)+'/'+string(maxLength))
+}
 </string>
           </argument>
         </arguments>

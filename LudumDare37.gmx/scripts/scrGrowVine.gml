@@ -13,6 +13,10 @@ with objPlanter {
     var hitWall = false
     
     for (var i=1; i<ds_list_size(pathListY); i+=1) {
+        if ds_list_size(vineBase.segmentList) > vineBase.maxLength {
+            continue
+        }
+        
         var x1 = pathListX[| i-1]
         var y1 = pathListY[| i-1]
         var x2 = pathListX[| i]
@@ -81,11 +85,7 @@ with objPlanter {
         if not hitWall fractionToStopAt = 1
     }
     
-    with vineBase {
-        if ds_list_size(segmentList) >= maxLength {
-            doneGrowing = true
-        }
-    }
+    with vineBase doneGrowing = ds_list_size(segmentList) > maxLength
     
     scrClearPath()
 }

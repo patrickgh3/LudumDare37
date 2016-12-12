@@ -31,6 +31,7 @@ runningAway = false
 hitFence = false
 index = -1
 special = 0
+shine1 = noone
 </string>
           </argument>
         </arguments>
@@ -152,6 +153,8 @@ if not runningAway {
     }
     speed = 3
     
+    with shine1 instance_destroy()
+    shine1 = noone
 }
 </string>
           </argument>

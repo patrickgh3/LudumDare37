@@ -233,7 +233,9 @@ yLast = y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>path_end()
+            <string>/// stopping moving
+
+path_end()
 path_delete(path)
 growing = false
 ds_list_clear(growSegments)
@@ -263,6 +265,8 @@ if instance_exists(touchedPond) {
     and global.pondDrained[3] and global.pondDrained[4] {
         with objTillTransition event_user(0)
     }
+    
+    global.tutorialDisableSpikes = 0
 }
 
 if touchedSeedbag2 {
