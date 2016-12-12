@@ -24,5 +24,7 @@
     <frame index="1">images\sprPlantHintPlaceholder_1.png</frame>
     <frame index="2">images\sprPlantHintPlaceholder_2.png</frame>
     <frame index="3">images\sprPlantHintPlaceholder_3.png</frame>
+    <frame index="4">images\sprPlantHintPlaceholder_4.png</frame>
+    <frame index="5">images\sprPlantHintPlaceholder_5.png</frame>
   </frames>
 </sprite>
