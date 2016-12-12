@@ -120,7 +120,7 @@ ds_list_destroy(pathListY)
         for (var xx=0; xx&lt;w; xx+=1) {
             for (var yy=0; yy&lt;h; yy+=1) {
                 if scrTileIsValidPlant(xx, yy) {
-                    draw_sprite(sprPlantHintPlaceholder, global.guiAnimT/15, objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize)
+                    draw_sprite(sprPlantHintPlaceholder, global.guiAnimT/5, objHouse.x+xx*global.tileSize, objHouse.y+yy*global.tileSize)
                 }
             }
         }
