@@ -182,9 +182,9 @@ if ds_list_size(pathListX) &gt; 1 {
     var yo = objHouse.y + global.tileSize/2+pathAnimYOff
     
     for (var i=1; i&lt;ds_list_size(pathListX); i+=1) {
-        var x1 = pathListX[| i]*xs+xo
+        var x1 = pathListX[| i]*xs+xo-1
         var y1 = pathListY[| i]*ys+yo
-        var x2 = pathListX[| i-1]*xs+xo
+        var x2 = pathListX[| i-1]*xs+xo-1
         var y2 = pathListY[| i-1]*ys+yo
         
         draw_set_alpha(0.7)

@@ -162,8 +162,8 @@
     <instance objName="objWall" x="480" y="512" name="inst_B745FF59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="928" y="512" name="inst_D48F2D29" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="864" y="768" name="inst_EBBFBCA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoatFence" x="736" y="1152" name="inst_D0F52BA1" locked="0" code="hp = 1&#xA;" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoat" x="608" y="1056" name="inst_BBF5D5F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGoatFence" x="768" y="1088" name="inst_D0F52BA1" locked="0" code="index = 1&#xA;" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGoat" x="608" y="1056" name="inst_BBF5D5F1" locked="0" code="index = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="640" y="1152" name="inst_F06BBAB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="672" y="1152" name="inst_05D61895" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="704" y="1152" name="inst_82D5A405" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -177,7 +177,7 @@
     <instance objName="objGoat" x="1088" y="928" name="inst_9205C62C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMushroom" x="704" y="928" name="inst_BDCC670F" locked="0" code="group=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMushroom" x="800" y="960" name="inst_A4AA1565" locked="0" code="group=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMushroom" x="928" y="896" name="inst_31704E16" locked="0" code="group=2&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMushroom" x="928" y="896" name="inst_31704E16" locked="0" code="group=2&#xA;sprite_index = sprMushroom2&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMushroomGate" x="736" y="1024" name="inst_1A8F8B4A" locked="0" code="group = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="576" y="432" name="inst_BB773E1A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="576" y="400" name="inst_60AA178F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

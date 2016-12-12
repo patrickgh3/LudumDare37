@@ -96,6 +96,7 @@
     <sprite>sprites\sprMound</sprite>
     <sprite>sprites\sprPond</sprite>
     <sprite>sprites\sprCancelX</sprite>
+    <sprite>sprites\sprCancelXOutline</sprite>
     <sprite>sprites\sprPond2</sprite>
     <sprite>sprites\sprPond3</sprite>
     <sprite>sprites\sprWell</sprite>
@@ -156,6 +157,7 @@
     <object>objects\objPlayer</object>
     <object>objects\objWall</object>
     <object>objects\objGoat</object>
+    <object>objects\objGoatFenceV</object>
     <object>objects\objGoatFence</object>
     <object>objects\objMushroom</object>
     <object>objects\objMushroomGate</object>
