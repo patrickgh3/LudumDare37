@@ -114,6 +114,8 @@
     <sprite>sprites\sprLilypad</sprite>
     <sprite>sprites\sprFenceH</sprite>
     <sprite>sprites\sprFenceV</sprite>
+    <sprite>sprites\sprMushroom</sprite>
+    <sprite>sprites\sprMushroom2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
