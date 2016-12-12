@@ -16,6 +16,8 @@
     <sound>sound\sndThorn2</sound>
     <sound>sound\sndSplash</sound>
     <sound>sound\sndBreak</sound>
+    <sound>sound\sndGoat</sound>
+    <sound>sound\sndGoatRun</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="placeholder">
