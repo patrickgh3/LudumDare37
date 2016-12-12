@@ -390,14 +390,14 @@ else if objPlanter.state == PlantState_Choose {
             <kind>1</kind>
             <string>// Draw square highlight
 if placeable {
-    var rectOff = 0
-    var arrowOff = 0
+    var rectOff = -1
+    var arrowOff = -1
     if floor(uiAnimT/20) mod 2 != 0 {
-        rectOff = 1
-        arrowOff = 1
+        rectOff = 0
+        arrowOff = 0
     }
     
-    draw_set_color(c_white)
+    draw_set_color(make_color_hsv(0, 0, 210))
     draw_rectangle(tileXWorld-rectOff, tileYWorld-rectOff,
         tileXWorld+global.tileSize-1+rectOff, tileYWorld+global.tileSize-1+rectOff, true)
     draw_sprite(sprArrowDown, 0, tileXWorld+global.tileSize/2, tileYWorld+4-arrowOff)
@@ -405,6 +405,7 @@ if placeable {
     {
         draw_sprite(sprKeyZ,0,x,y-60);
     }
+    draw_set_color(c_white)
 }
 else if not ableToCancel {
     //draw_sprite_ext(sprNoSelectSquare, 0, tileXWorld, tileYWorld, 1, 1, 0, c_white, 1)

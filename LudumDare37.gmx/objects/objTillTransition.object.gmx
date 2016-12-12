@@ -78,7 +78,7 @@ if active {
     var tiles = tile_get_ids_at_depth(layer)
     for (var i=0; i&lt;array_length_1d(tiles); i+=1) {
         var tile = tiles[i]
-        tile_set_alpha(tile, tile_get_alpha(tile)-da)
+        tile_set_alpha(tile, max(tile_get_alpha(tile)-da, 0))
     }
     
     if t == tl {
