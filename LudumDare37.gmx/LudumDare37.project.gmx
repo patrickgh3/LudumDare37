@@ -123,8 +123,11 @@
     <sprite>sprites\sprArrow2</sprite>
     <sprite>sprites\sprSparkle</sprite>
     <sprite>sprites\sprGoatWalking</sprite>
+    <sprite>sprites\sprGoatWalking2</sprite>
     <sprite>sprites\sprGoatIdle</sprite>
+    <sprite>sprites\sprGoatIdle2</sprite>
     <sprite>sprites\sprGoatEating</sprite>
+    <sprite>sprites\sprGoatEating2</sprite>
     <sprite>sprites\sprCrash</sprite>
     <sprite>sprites\sprShine1</sprite>
     <sprite>sprites\sprWetplace</sprite>
