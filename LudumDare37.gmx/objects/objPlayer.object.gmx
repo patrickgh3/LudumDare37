@@ -507,7 +507,7 @@ if endMoveToPoint {
         x = objEndPlayerPoint.x
         y = objEndPlayerPoint.y
         endMoveToPoint = false
-        alarm[2] = 60*2
+        alarm[2] = 60*1.5
         alarm[0] = 60*3.5
         alarm[1] = 60*7
         image_speed = 0

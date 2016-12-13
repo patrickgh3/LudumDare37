@@ -114,7 +114,9 @@ ds_list_destroy(pathListY)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if objTillTransition.groupIndex &lt;= 1 {
+            <string>if global.endingIsHappeningSoHideUI exit
+
+//if objTillTransition.groupIndex &lt;= 1 {
 if state == PlantState_Plant {
     // Draw potential vine planting positions
     for (var xx=0; xx&lt;w; xx+=1) {

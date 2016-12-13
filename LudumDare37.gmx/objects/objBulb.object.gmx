@@ -326,6 +326,7 @@ if gotKey {
     with objLastShine instance_destroy()
     with objPlayer frozen = true
     audio_play_sound(sndDig, 0, false)
+    global.endingIsHappeningSoHideUI = true
 }
 </string>
           </argument>
