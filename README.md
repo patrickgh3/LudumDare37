@@ -1,4 +1,4 @@
-Vine Garden
+Vine Story
 ---
 
 Chill puzzle game made in 72 hours by me and [Lss40](https://twitter.com/lss40). I'm happy to explain any part of the code if you contact me.
