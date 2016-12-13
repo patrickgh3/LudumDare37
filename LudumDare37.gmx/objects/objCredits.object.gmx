@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>state = 0
-alpha = 0
+            <string>alpha = 0
 </string>
           </argument>
         </arguments>
@@ -49,26 +48,13 @@ alpha = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if state == 0 {
-    alpha += 1/90
-    if alpha &gt;= 1 {
-        room_goto_next()
-        state = 1
-        alpha = 1
-    }
-}
-else if state == 1 {
-    alpha -= 1/60
-    if alpha &lt;= 0 {
-        instance_destroy()
-    }
-}
+            <string>alpha += 1/(60*3)
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="75">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -85,11 +71,34 @@ else if state == 1 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_alpha(alpha)
-draw_set_color(c_black)
-draw_rectangle(0, 0, view_wview, view_hview, false)
+            <string>var xc = view_wview/2
+var yc = view_hview/2
+
+/*draw_set_color(c_white)
+draw_set_alpha(0.3*alpha)
+draw_rectangle(0, 0, view_wview, 200, false)*/
+
 draw_set_color(c_white)
+draw_set_alpha(1*alpha)
+draw_set_halign(fa_center)
+draw_set_valign(fa_center)
+draw_set_font(fontFsBig)
+draw_text(xc, 90, 'Vine Story')
+
+draw_set_font(fontFsSmall)
+draw_text(xc, 170, 'Thank you for playing!')
+
+var xo = 100
+var yy = 280
+draw_text(xc-xo, yy, 'Art, Design#Lss40')
+draw_text(xc+xo, yy, 'Code, Design#Patrickgh3')
+
+draw_text(xc, 450, 'Sound effects: Freesound#Music: TODO')
+
+draw_text(xc, 560, 'Made for Ludum Dare 37#with the theme "One Room"')
+
 draw_set_alpha(1)
+draw_set_color(c_white)
 </string>
           </argument>
         </arguments>

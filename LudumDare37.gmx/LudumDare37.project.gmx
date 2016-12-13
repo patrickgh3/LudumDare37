@@ -177,6 +177,10 @@
     <script>scripts\scrVineToSpikeSprite.gml</script>
     <script>scripts\scrPlayerUpdatePlaceable.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fontFsBig</font>
+    <font>fonts\fontFsSmall</font>
+  </fonts>
   <objects name="objects">
     <object>objects\objPlayer</object>
     <object>objects\objWall</object>
@@ -220,6 +224,7 @@
       <object>objects\objTitlePlayer</object>
     </objects>
     <object>objects\objLastShine</object>
+    <object>objects\objCredits</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
