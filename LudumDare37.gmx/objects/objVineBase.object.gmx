@@ -217,7 +217,7 @@ if destroying {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if destroyVisible {
+            <string>if destroyVisible and not global.endingIsHappeningSoHideUI {
     draw_set_alpha(0.2)
     draw_set_color(c_white)
     var xx = view_xview+view_wview
