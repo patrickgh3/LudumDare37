@@ -139,6 +139,7 @@
     <sprite>sprites\sprProgressBack</sprite>
     <sprite>sprites\sprArrowKeys</sprite>
     <sprite>sprites\sprGreenhousetop</sprite>
+    <sprite>sprites\sprKey</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTilled</background>
@@ -221,6 +222,7 @@
     </objects>
     <object>objects\objLastShine</object>
     <object>objects\objGreenhouseTop</object>
+    <object>objects\objKey</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
