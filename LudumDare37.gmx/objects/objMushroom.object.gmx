@@ -28,6 +28,7 @@
             <string>group = -1
 active = false
 image_speed = 0
+activeLast = false
 </string>
           </argument>
         </arguments>
@@ -50,7 +51,8 @@ image_speed = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not place_meeting(x, y, objVineSegment) and not place_meeting(x, y, objBulb) {
+            <string>lastActive = active
+if not place_meeting(x, y, objVineSegment) and not place_meeting(x, y, objBulb) {
     active = false
 }
 
@@ -68,6 +70,13 @@ if active {
 }
 else {
     image_index = 0
+}
+
+if active and not lastActive {
+    audio_play_sound(sndPress, 0, false)
+}
+if not active and lastActive {
+    audio_play_sound(sndUnpress, 0, false)
 }
 </string>
           </argument>

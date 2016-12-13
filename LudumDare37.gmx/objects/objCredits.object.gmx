@@ -93,7 +93,7 @@ var yy = 280
 draw_text(xc-xo, yy, 'Art, Design#Lss40')
 draw_text(xc+xo, yy, 'Code, Design#Patrickgh3')
 
-draw_text(xc, 450, 'Sound effects: Freesound#Music: TODO')
+draw_text(xc, 450, 'Sound effects: Freesound.com#Music: Patrickgh3#Playtester: Zapmunk')
 
 draw_text(xc, 560, 'Made for Ludum Dare 37#with the theme "One Room"')
 
