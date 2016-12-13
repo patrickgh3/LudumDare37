@@ -35,6 +35,7 @@ shine1 = noone
 
 jumping = false
 playedSound=false
+brown = false
 </string>
           </argument>
         </arguments>
@@ -84,7 +85,10 @@ if playedSound {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if runningAway = false sprite_index = sprGoatIdle
+            <string>if runningAway = false {
+    if brown sprite_index = sprGoatIdle2
+    else sprite_index = sprGoatIdle
+}
 alarm[0] = 500+irandom(800);
 </string>
           </argument>
@@ -108,7 +112,10 @@ alarm[0] = 500+irandom(800);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if runningAway = false sprite_index = sprGoatEating
+            <string>if runningAway = false {
+    if brown sprite_index = sprGoatEating2
+    else sprite_index = sprGoatEating
+}
 alarm[1] = 300 + irandom(300)
 </string>
           </argument>
@@ -138,7 +145,8 @@ alarm[1] = 300 + irandom(300)
     gravity = 0
     vspeed = 0
     
-    sprite_index = sprGoatWalking
+    if brown sprite_index = sprGoatWalking2
+    else sprite_index = sprGoatWalking
     image_speed = 0.3
     
     if special==0 {
@@ -160,7 +168,7 @@ alarm[1] = 300 + irandom(300)
     }
     speed = 3
 }
-if sprite_index = sprGoatWalking &amp;&amp; !playedSound {
+if (sprite_index == sprGoatWalking or sprite_index == sprGoatWalking2) &amp;&amp; !playedSound {
     myRunSound = audio_play_sound(sndGoatRun,1,1);
     playedSound = true
     alarm[2] = 60*2
@@ -250,7 +258,8 @@ if not runningAway {
     jumping = true
     vspeed = -6
     gravity = 0.3
-    sprite_index = sprGoatIdle
+    if brown sprite_index = sprGoatIdle2
+    else sprite_index = sprGoatIdle
     image_speed = 0
     audio_play_sound(sndGoat,1,0);
     
