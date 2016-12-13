@@ -89,7 +89,7 @@ draw_set_font(fontFsBig)
 draw_text(xc, 90, 'Vine Story')
 
 draw_set_font(fontFsSmall)
-draw_text(xc, 460, 'Controls: Arrow keys, Z, X#M to mute music')
+draw_text(xc, 460, 'M to mute music#+,- to adjust volume#Controls: Arrow keys, Z, X')
 if not instance_exists(objTitleFade) {
     draw_text(xc, 560, '- Press Z key -')
 }

@@ -20,6 +20,7 @@
     <sound>sound\sndGoatRun</sound>
     <sound>sound\sndPress</sound>
     <sound>sound\sndUnpress</sound>
+    <sound>sound\sndMusic</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="placeholder">
@@ -230,6 +231,7 @@
     <object>objects\objCredits</object>
     <object>objects\objGreenhouseTop</object>
     <object>objects\objKey</object>
+    <object>objects\objWorld</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
