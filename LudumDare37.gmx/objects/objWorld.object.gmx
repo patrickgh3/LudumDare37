@@ -84,6 +84,10 @@ if global.debugMode {
         }
     }
 }
+
+if not global.musicMuted and not audio_is_playing(sndMusic) {
+    global.musicSound = audio_play_sound(sndMusic, 0, true)
+}
 </string>
           </argument>
         </arguments>
