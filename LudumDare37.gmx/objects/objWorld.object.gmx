@@ -76,6 +76,14 @@ if keyboard_check_pressed(189) {//minus
 }
 
 volumeT -= 1
+
+if global.debugMode {
+    if keyboard_check_pressed(ord('I')) {
+        with objKey {
+            x = 608 y = 480
+        }
+    }
+}
 </string>
           </argument>
         </arguments>

@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alpha += 1/(60*3)
+            <string>alpha += 1/(60*4)
 </string>
           </argument>
         </arguments>

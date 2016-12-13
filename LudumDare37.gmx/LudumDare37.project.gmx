@@ -232,6 +232,9 @@
     <object>objects\objGreenhouseTop</object>
     <object>objects\objKey</object>
     <object>objects\objWorld</object>
+    <object>objects\objKeyFly</object>
+    <object>objects\objEndPlayerPoint</object>
+    <object>objects\objEndPlayerWalk</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>

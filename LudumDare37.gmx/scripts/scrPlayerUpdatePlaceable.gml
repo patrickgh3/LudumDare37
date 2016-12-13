@@ -1,4 +1,8 @@
 with objPlayer {
+    if frozen {
+        placeable = false
+        return 0
+    }
     if objPlanter.state == PlantState_Destroy {
         placeable = false
     }
