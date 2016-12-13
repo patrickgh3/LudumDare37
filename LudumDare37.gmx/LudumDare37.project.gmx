@@ -18,6 +18,8 @@
     <sound>sound\sndBreak</sound>
     <sound>sound\sndGoat</sound>
     <sound>sound\sndGoatRun</sound>
+    <sound>sound\sndPress</sound>
+    <sound>sound\sndUnpress</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="placeholder">
